@@ -1,0 +1,25 @@
+CREATE DATABASE MetaHub;
+
+CREATE TABLE Images (
+    imageId INT AUTO_INCREMENT PRIMARY KEY,
+    imageName VARCHAR(100) NOT NULL UNIQUE,
+    imageDescription JSON NOT NULL
+);
+
+CREATE TABLE PowerPoints (
+    pptId INT AUTO_INCREMENT PRIMARY KEY,
+    pptName VARCHAR(100) NOT NULL UNIQUE,
+    pptDescription JSON NOT NULL
+);
+
+CREATE TABLE Musics (
+    musicId INT AUTO_INCREMENT PRIMARY KEY,
+    musicName VARCHAR(100) NOT NULL UNIQUE,
+    musicDescription JSON NOT NULL
+);
+
+CREATE TABLE PDFs (
+    pdfId INT AUTO_INCREMENT PRIMARY KEY,
+    pdfName VARCHAR(100) NOT NULL UNIQUE,
+    pdfDescription JSON NOT NULL
+);
