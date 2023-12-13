@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Search Engine</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Music Search Engine</h1>
+
+    <form id="searchForm" onsubmit="searchMusic(); return false">
+      <div class="search-bar">
+        <input type="text" id="searchTerm" name="searchTerm" placeholder="Search term">
+        <button type="submit">Search</button>
+      </div>
+
+      <label for="genre">Genre:</label>
+      <select id="genre" name="genre">
+        <!-- Add your genre options dynamically based on your data -->
+        <option value="pop">Pop</option>
+        <option value="rock">Rock</option>
+        <!-- Add more options as needed -->
+      </select>
+
+      <label for="year">Year:</label>
+      <select id="year" name="year">
+        <!-- Add your year options dynamically based on your data -->
+        <option value="2012">2012</option>
+        <option value="2013">2013</option>
+        <!-- Add more options as needed -->
+      </select>
+
+      <label for="duration">Duration:</label>
+      <input type="range" id="duration" name="duration" min="0" max="300" step="1" value="0">
+      <span id="durationValue">0 seconds</span>
+    </form>
+
+    <article class="searchResults">
+      <!-- Display search results here -->
+      <!-- You can use JavaScript to dynamically update this section -->
+    </article>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
