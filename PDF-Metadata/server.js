@@ -4,7 +4,7 @@ import mysql from 'mysql2/promise';
 const app = express();
 
 // Serve all files in the client folder
-app.use(express.static('client'));
+app.use(express.static('Client'));
 
 // Declare the db variable outside the initializeDatabase function
 let db;
@@ -56,7 +56,7 @@ app.get('/api/pdfs/:searchTerm/:searchType/:sortOption', async (request, respons
 
 // API route for downloading PDFs
 app.get('/api/pdfs/download/:pdfId', (request, response) => {
-  const filePath = `path/to/your/pdf/files/${request.params.pdfId}`;
+  const filePath = `PDF-Metadata\Client\PDFs${request.params.pdfId}`;
   response.download(filePath);
 });
 

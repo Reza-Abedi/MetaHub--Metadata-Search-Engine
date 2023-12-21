@@ -4,7 +4,7 @@ import mysql from 'mysql2/promise';
 
 const app = express();
 
-app.use(express.static('C:/Users/shiva/Desktop/image-metadata/client'));
+app.use(express.static('C:/Users/shiva/Desktop/image-metadata/Client'));
 
 const db = await mysql.createConnection({
     host: '161.97.144.27',
@@ -48,7 +48,7 @@ app.get('/api/search/:searchTerm/:searchType', async (request, response) => {
 
 app.get('/images/:imageName', (req, res) => {
     const imageName = req.params.imageName;
-    const imagePath = path.join(__dirname, 'client/images', imageName);
+    const imagePath = path.join(__dirname, 'Image-Metadata\Client\IMAGEs', imageName);
     res.sendFile(imagePath);
 });
 

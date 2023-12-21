@@ -1,0 +1,74 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metadata Servers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .server-box {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            width: 200px;
+        }
+        button {
+            margin-top: 10px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="server-box">
+        <h2>Images Server</h2>
+        <button onclick="startServer(3000)">Start Server</button>
+    </div>
+
+    <div class="server-box">
+        <h2>Music Server</h2>
+        <button onclick="startServer(3001)">Start Server</button>
+    </div>
+
+    <div class="server-box">
+        <h2>PDF Server</h2>
+        <button onclick="startServer(3002)">Start Server</button>
+    </div>
+
+    <div class="server-box">
+        <h2>PPT Server</h2>
+        <button onclick="startServer(3003)">Start Server</button>
+    </div>
+
+    <script>
+        function startServer(port) {
+            // Assuming you have a script to start the server (server.js) with a specified port
+            // You might want to customize this part based on your actual server setup
+            const child_process = require('child_process');
+            const serverProcess = child_process.spawn('node', ['server.js', port]);
+
+            serverProcess.stdout.on('data', (data) => {
+                console.log(`Server output: ${data}`);
+            });
+
+            serverProcess.stderr.on('data', (data) => {
+                console.error(`Server error: ${data}`);
+            });
+
+            serverProcess.on('close', (code) => {
+                console.log(`Server closed with code ${code}`);
+            });
+        }
+    </script>
+</body>
+</html>

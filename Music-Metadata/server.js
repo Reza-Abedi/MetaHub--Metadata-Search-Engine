@@ -9,7 +9,7 @@ import mysql from 'mysql2/promise';
 const app = express();
 
 // Serve all files in the folder client
-app.use(express.static('client'));
+app.use(express.static('Client'));
 
 // Start the server on a certain port
 // and write to the terminal which port...

@@ -6,7 +6,7 @@ import mysql from 'mysql2/promise';
 const app = express();
 
 // Serve all files in the client folder
-app.use(express.static('client'));
+app.use(express.static('Client'));
 
 // Declare the db variable outside the initializeDatabase function
 let db;
@@ -73,7 +73,7 @@ app.get('/api/powerpoints/:searchTerm', async (request, response) => {
 // API route for downloading PowerPoint presentations
 app.get('/api/powerpoints/download/:pptName', (request, response) => {
   // Replace the following line with logic to serve the file for download
-  const filePath = `C:/Users/Mreza.Abedi/OneDrive/Skrivbord/ppt-Metadata/client/ppt/${request.params.pptName}`;
+  const filePath = `PPT-Metadata\Client\PPTs${request.params.pptName}`;
   response.download(filePath);
 });
 
