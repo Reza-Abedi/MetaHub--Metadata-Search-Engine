@@ -14,6 +14,7 @@ app.listen(3000, () => {
   console.log('Listening on http://localhost:3000');
   initializeDatabase();
 });
+  //  Database initialization logic goes here
 
 async function initializeDatabase() {
   // Create a connection 'db' to the database
@@ -25,8 +26,6 @@ async function initializeDatabase() {
     database: 'MetaHub'
   });
 
-  // Your database initialization logic goes here
-  // For example, you might want to create tables or perform other setup tasks
 }
 
 // API route for searching PDFs by title, type, and sorting option
@@ -57,7 +56,6 @@ app.get('/api/pdfs/:searchTerm/:searchType/:sortOption', async (request, respons
 
 // API route for downloading PDFs
 app.get('/api/pdfs/download/:pdfId', (request, response) => {
-  // Replace the following line with logic to serve the file for download
   const filePath = `path/to/your/pdf/files/${request.params.pdfId}`;
   response.download(filePath);
 });
