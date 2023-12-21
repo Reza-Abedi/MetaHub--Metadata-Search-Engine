@@ -1,0 +1,29 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PowerPoint Search</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>PowerPoint Search</h1>
+    </header>
+    <form name="searchForm" onsubmit="search(); return false">
+      <div class="input-group">
+        <input name="term" placeholder="Search term">
+        <button type="submit">Search</button>
+      </div>
+    </form>
+    <div class="searchResults"></div>
+  </div>
+  <script src="main.js"></script>
+</body>
+
+</html>
