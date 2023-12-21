@@ -9,11 +9,24 @@
 </head>
 
 <body>
-  <h1>PowerPoint Search</h1>
-  <form name="searchForm" onsubmit="search(); return false">
-    <input name="term" placeholder="Search term">
-    <button type="submit">Search</button>
-  </form>
+  <header>
+    <h1>PowerPoint Search</h1>
+    <div class="search-container">
+      <form name="searchForm" onsubmit="search(); return false" class="flex-container">
+        <div class="input-group">
+          <input name="term" placeholder="Search term">
+        </div>
+        <div class="select-group">
+          <label for="titleSort">Sort by Title:</label>
+          <select name="titleSort" id="titleSort">
+            <option value="ascending">A to Z</option>
+            <option value="descending">Z to A</option>
+          </select>
+        </div>
+        <button type="submit">Search</button>
+      </form>
+    </div>
+  </header>
   <div class="searchResults"></div>
   <script src="main.js"></script>
 </body>

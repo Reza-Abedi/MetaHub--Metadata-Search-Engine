@@ -1,3 +1,5 @@
+// server.js
+
 import express from 'express';
 import mysql from 'mysql2/promise';
 
@@ -29,17 +31,24 @@ async function initializeDatabase() {
   // For example, you might want to create tables or perform other setup tasks
 }
 
-// API route for searching PowerPoint presentations by title
+// API route for searching PowerPoint presentations with advanced search options
 app.get('/api/powerpoints/:searchTerm', async (request, response) => {
   let searchTerm = request.params.searchTerm;
+  let titleSortOption = request.query.titleSort;
 
-  // Perform the database query and retrieve presentations based on the search term
-  // Replace the following lines with your actual database query logic
+  // Build the SQL query based on advanced search options
   let sql = `
     SELECT *
     FROM PowerPoints
     WHERE LOWER(pptDescription -> '$.title') LIKE LOWER (?)
   `;
+
+  // Add sorting based on title
+  if (titleSortOption === 'ascending') {
+    sql += ` ORDER BY pptDescription -> '$.title' ASC `;
+  } else if (titleSortOption === 'descending') {
+    sql += ` ORDER BY pptDescription -> '$.title' DESC `;
+  }
 
   let presentations = await query(sql, ['%' + searchTerm + '%']);
 
@@ -51,7 +60,7 @@ app.get('/api/powerpoints/:searchTerm', async (request, response) => {
       company: presentation.pptDescription.company || 'N/A',
       timestamp: presentation.pptDescription.timestamp || 'N/A',
       wordCount: presentation.pptDescription.word_count || 'N/A',
-      slideCount: presentation.pptDescription.slide_count || 'N/A',
+      slideCount: presentation.pptDescription.actual_slide_count_column_name || 'N/A',
       creationDate: presentation.pptDescription.creation_date || 'N/A',
       lastModified: presentation.pptDescription.last_modified || 'N/A',
       downloadLink: `/api/powerpoints/download/${presentation.pptName}` // Add download link
@@ -64,7 +73,7 @@ app.get('/api/powerpoints/:searchTerm', async (request, response) => {
 // API route for downloading PowerPoint presentations
 app.get('/api/powerpoints/download/:pptName', (request, response) => {
   // Replace the following line with logic to serve the file for download
-  const filePath = `C:/Users/Mreza.Abedi/OneDrive/Skrivbord/PowerpointsMetadata/client/ppt/${request.params.pptName}`;
+  const filePath = `C:/Users/Mreza.Abedi/OneDrive/Skrivbord/ppt-Metadata/client/ppt/${request.params.pptName}`;
   response.download(filePath);
 });
 

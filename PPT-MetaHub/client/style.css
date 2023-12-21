@@ -4,45 +4,19 @@ body {
   font-family: 'Montserrat', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f5f5f5;
+  background-color: #f0f0f0; /* Updated background color */
   color: #333;
 }
 
-h1 {
-  text-align: center;
-  margin: 10px 0; /* Further reduced margin */
-  color: #007bff;
-  font-size: 24px; /* Updated font size */
-}
-
-form {
-  max-width: 600px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-input {
-  width: 80%;
-  padding: 12px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-family: 'Montserrat', sans-serif;
-}
-
-button {
-  width: 80%;
-  padding: 12px;
-  background-color: #007bff;
+header {
+  background-color: #3498db; /* Updated header background color */
   color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-family: 'Montserrat', sans-serif;
+  padding: 20px;
+  text-align: center;
 }
 
-.searchResults {
-  max-width: 800px;
+.search-container {
+  max-width: 1200px;
   margin: 20px auto;
   padding: 20px;
   background-color: #fff;
@@ -50,18 +24,99 @@ button {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-section {
-  margin-bottom: 20px;
+form {
+  display: flex;
+  align-items: center;
 }
 
-a {
-  display: block;
-  margin-top: 10px;
-  text-decoration: none;
-  color: #007bff;
-  font-family: 'Montserrat', sans-serif;
+.input-group {
+  display: flex;
+  margin-right: 10px;
 }
 
-a:hover {
-  text-decoration: underline;
+input {
+  flex: 1;
+  width: 600px;
+  padding: 12px;
+  border: 1px solid #ddd; /* Updated border color */
+  border-radius: 4px;
+  transition: border-color 0.3s ease; /* Smooth transition for border color */
+}
+
+input:focus {
+  border-color: #3498db; /* Highlight border color on focus */
+}
+
+.select-group {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+label {
+  margin-right: 5px;
+}
+
+select {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+}
+
+select:focus {
+  border-color: #3498db;
+}
+
+button {
+  width: 200px;
+  padding: 12px;
+  background-color: #3498db; /* Updated button color */
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+button:hover {
+  background-color: #2980b9; /* Darker color on hover */
+}
+
+.searchResults {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+}
+
+/* Responsive table styles */
+.responsive-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.responsive-table th, .responsive-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+.responsive-table th {
+  background-color: #3498db;
+  color: #fff;
+}
+
+@media screen and (max-width: 600px) {
+  .responsive-table {
+    overflow-x: auto;
+  }
+}
+
+.select-group label {
+  margin-right: 5px;
+  color: #3498db; /* Updated color for the label */
 }
