@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Musik</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <!-- Display the current search term -->
+    <p id="currentSearchTerm"></p>
+  </header>
+
+  <div class="main-container">
+    <div class="sidebar">
+      <!-- Search form -->
+      <form name="searchForm" onsubmit="search(); return false">
+        <input name="term" placeholder="Search for music...">
+        <button type="submit">Search</button>
+        <p>
+          Search in:
+          <select name="searchType">
+            <option value="all">All information about songs</option>
+            <option value="artist">Artist name</option>
+            <option value="album">Album name</option>
+            <option value="title">Song title</option>
+          </select>
+        </p>
+
+        <!-- Advanced search menu goes here -->
+        <fieldset>
+          <legend>Advanced Search</legend>
+          <label>
+            <input type="radio" name="durationSearch" value="all" checked>
+            All Durations
+          </label>
+          <label>
+            <input type="radio" name="durationSearch" value="greaterThanOrEqual">
+            Duration >= 30
+          </label>
+          <label>
+            <input type="radio" name="durationSearch" value="lessThan">
+            Duration < 30
+          </label>
+          <!-- Add more advanced search options here if needed -->
+        </fieldset>
+
+        <!-- Sorting dropdown menu -->
+        <label>
+          Sort by:
+          <select name="sortOption" onchange="search()">
+            <option value="asc">A to Z</option>
+            <option value="desc">Z to A</option>
+          </select>
+        </label>
+      </form>
+    </div>
+
+    <div class="content">
+      <!-- Search results go here -->
+      <div class="searchResults">
+        <p class="resultMessage">Search for a song.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
