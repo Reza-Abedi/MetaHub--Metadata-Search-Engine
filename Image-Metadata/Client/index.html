@@ -9,16 +9,8 @@
 <body>
     <div class="container">
         <h1>Metadata Search</h1>
-
-        <!-- Input fields for latitude and longitude -->
-        <label for="latitudeInput">Latitude:</label>
-        <input type="text" id="latitudeInput" placeholder="Enter latitude">
-
-        <label for="longitudeInput">Longitude:</label>
-        <input type="text" id="longitudeInput" placeholder="Enter longitude">
-
         <input type="text" id="searchInput" placeholder="Enter search term">
-
+        
         <!-- Assuming you have a dropdown for selecting search type -->
         <select id="searchType">
             <option value="all">All</option>
@@ -28,7 +20,7 @@
             <!-- Add other relevant search types -->
         </select>
         
-        <button onclick="searchMetadata()">Search</button>
+        <button id="searchButton">Search</button>
         
         <div id="resultContainer"></div>
     </div>

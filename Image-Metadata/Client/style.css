@@ -1,3 +1,5 @@
+/* style.css */
+
 body {
   font-family: 'Arial', sans-serif;
   background-color: #f0f0f0;
@@ -6,7 +8,7 @@ body {
 }
 
 .container {
-  max-width: 800px;
+  max-width: 1250px;
   margin: 50px auto;
   padding: 20px;
   background-color: #fff;
@@ -21,6 +23,8 @@ h1 {
 input, select, button {
   margin-bottom: 10px;
   padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 button {
@@ -34,12 +38,28 @@ button {
   margin-top: 20px;
 }
 
-.resultItem {
-  margin-bottom: 20px;
+/* Styling for the result table */
+.resultTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
 }
 
-img {
-  max-width: 100%;
+.resultTable th, .resultTable td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.resultTable th {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+/* Styling for image previews */
+.resultTable img {
+  max-width: 100px;
   height: auto;
-  margin-bottom: 10px;
+  display: block;
+  margin: 0 auto;
 }
