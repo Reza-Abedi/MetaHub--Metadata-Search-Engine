@@ -1,5 +1,4 @@
 // Import the express package/module
-// that lets us start up a web server
 import express from 'express';
 
 // Import the database driver
@@ -32,36 +31,47 @@ async function query(sql, listOfValues) {
 }
 
 // A search route to find music
+// A search route to find music
 app.get('/api/music/:searchTerm/:searchType/:durationSearch', async (request, response) => {
-  // Get the search term from a parameter from the route/url
   let searchTerm = request.params.searchTerm;
-  // Get the search type as a parameter from the route/url
   let searchType = request.params.searchType;
-  // Get the duration search as a parameter from the route/url
   let durationSearch = request.params.durationSearch;
 
   // Construct the SQL query based on the search type and duration search
-  let sql = `
-    SELECT *
-    FROM Musics
-    WHERE LOWER(musicDescription -> '$.common.${searchType}') LIKE LOWER (?)
-      AND CAST(JSON_UNQUOTE(JSON_EXTRACT(musicDescription, '$.format.duration')) AS DECIMAL(10, 2))
-      ${durationSearch === 'greaterThanOrEqual' ? '>=' : '<'} ?
-  `;
+  let sql;
 
-  // If searching for all, adjust the query accordingly
-  if (searchType == 'all') {
+  if (durationSearch === 'bigger') {
     sql = `
       SELECT *
       FROM Musics
-      WHERE LOWER(musicDescription) LIKE LOWER (?)
-        AND CAST(JSON_UNQUOTE(JSON_EXTRACT(musicDescription, '$.format.duration')) AS DECIMAL(10, 2))
-        ${durationSearch === 'greaterThanOrEqual' ? '>=' : '<'} ?
+      WHERE LOWER(JSON_UNQUOTE(JSON_EXTRACT(musicDescription, '$.common.title'))) LIKE LOWER(?)
+        AND CAST(JSON_UNQUOTE(JSON_EXTRACT(musicDescription, '$.format.duration')) AS DECIMAL(10, 2)) > 30
+    `;
+  } else if (durationSearch === 'equal') {
+    sql = `
+      SELECT *
+      FROM Musics
+      WHERE LOWER(JSON_UNQUOTE(JSON_EXTRACT(musicDescription, '$.common.title'))) LIKE LOWER(?)
+        AND CAST(JSON_UNQUOTE(JSON_EXTRACT(musicDescription, '$.format.duration')) AS DECIMAL(10, 2)) = 30
+    `;
+  } else if (durationSearch === 'smaller') {
+    sql = `
+      SELECT *
+      FROM Musics
+      WHERE LOWER(JSON_UNQUOTE(JSON_EXTRACT(musicDescription, '$.common.title'))) LIKE LOWER(?)
+        AND CAST(JSON_UNQUOTE(JSON_EXTRACT(musicDescription, '$.format.duration')) AS DECIMAL(10, 2)) < 30
+    `;
+  } else {
+    // Default to all durations
+    sql = `
+      SELECT *
+      FROM Musics
+      WHERE LOWER(JSON_UNQUOTE(JSON_EXTRACT(musicDescription, '$.common.title'))) LIKE LOWER(?)
     `;
   }
 
   // Make a database query and remember the result using the search term
-  let result = await query(sql, ['%' + searchTerm + '%', durationSearch === 'greaterThanOrEqual' ? 30 : 30]);
+  let result = await query(sql, ['%' + searchTerm + '%']);
 
   // Send a response to the client
   response.json(result);

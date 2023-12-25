@@ -10,6 +10,7 @@
 
 <body>
   <header>
+    <h1>Music Metadata Search</h1>
     <!-- Display the current search term -->
     <p id="currentSearchTerm"></p>
   </header>
@@ -38,11 +39,15 @@
             All Durations
           </label>
           <label>
-            <input type="radio" name="durationSearch" value="greaterThanOrEqual">
-            Duration >= 30
+            <input type="radio" name="durationSearch" value="bigger">
+            Duration > 30
           </label>
           <label>
-            <input type="radio" name="durationSearch" value="lessThan">
+            <input type="radio" name="durationSearch" value="equal">
+            Duration = 30
+          </label>
+          <label>
+            <input type="radio" name="durationSearch" value="smaller">
             Duration < 30
           </label>
           <!-- Add more advanced search options here if needed -->

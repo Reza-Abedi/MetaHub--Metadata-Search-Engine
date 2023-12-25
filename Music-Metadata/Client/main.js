@@ -4,7 +4,6 @@ async function search() {
   let searchTerm = document.forms.searchForm.term.value;
   // Read the searchType
   let searchType = document.forms.searchForm.searchType.value;
-  console.log(searchType);
 
   // Read the selected duration search option
   let durationSearchRadio = document.querySelector('input[name="durationSearch"]:checked');
