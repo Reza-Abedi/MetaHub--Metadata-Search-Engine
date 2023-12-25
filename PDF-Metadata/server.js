@@ -29,30 +29,37 @@ async function initializeDatabase() {
   // For example, you might want to create tables or perform other setup tasks
 }
 
-// API route for searching PDFs by title, type, and sorting option
-app.get('/api/pdfs/:searchTerm/:searchType/:sortOption', async (request, response) => {
-  let searchTerm = request.params.searchTerm;
-  let searchType = request.params.searchType;
-  let sortOption = request.params.sortOption;
+// API route for searching PDFs by metadata and providing download links
+app.get('/api/pdfs/:searchTerm', async (request, response) => {
+  try {
+    let searchTerm = request.params.searchTerm;
 
-  // Modify the SQL query based on the selected sorting option
-  let sql = `
-    SELECT *
-    FROM PDFs
-    WHERE LOWER(pdfDescription->'$.info.Title') LIKE LOWER(?)
-  `;
+    // Modify the SQL query based on the selected sorting option
+    let sql = `
+      SELECT *
+      FROM PDFs
+      WHERE LOWER(pdfDescription->'$.info.Title') LIKE LOWER(?)
+         OR LOWER(pdfDescription->'$.info.Author') LIKE LOWER(?)
+         OR LOWER(pdfDescription->'$.info.Creator') LIKE LOWER(?)
+         OR LOWER(pdfDescription->'$.info.ModDate') LIKE LOWER(?)
+         OR LOWER(pdfDescription->'$.info.Keywords') LIKE LOWER(?)
+         OR LOWER(pdfDescription->'$.info.Producer') LIKE LOWER(?)
+         OR LOWER(pdfDescription->'$.info.CreationDate') LIKE LOWER(?)
+    `;
 
-  // Append ORDER BY clause for sorting
-  if (sortOption === 'asc') {
-    sql += ' ORDER BY pdfDescription->\'$.info.Title\' ASC';
-  } else if (sortOption === 'desc') {
-    sql += ' ORDER BY pdfDescription->\'$.info.Title\' DESC';
+    let pdfs = await query(sql, Array(7).fill('%' + searchTerm + '%'));
+
+    // Modify the response structure based on your database schema
+    const formattedResponse = pdfs.map(pdf => ({
+      metadata: pdf.pdfDescription.info,
+      downloadLink: `/api/pdfs/download/${pdf.pdfId}`
+    }));
+
+    response.json(formattedResponse);
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    response.status(500).json({ error: 'Internal Server Error', message: error.message });
   }
-
-  let pdfs = await query(sql, ['%' + searchTerm + '%']);
-
-  // Modify the response structure based on your database schema
-  response.json(pdfs);
 });
 
 // API route for downloading PDFs

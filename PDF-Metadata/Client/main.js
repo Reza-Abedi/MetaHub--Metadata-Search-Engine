@@ -2,13 +2,9 @@
 
 // Function to handle the search form submission
 async function search() {
-  // Read the search term and search type from the input fields
+  // Read the search term from the input field
   let searchTermInput = document.forms.searchForm.term;
-  let searchTypeInput = document.forms.searchForm.searchType;
-
-  // Check if searchTermInput and searchTypeInput are defined before accessing their values
   let searchTerm = searchTermInput ? searchTermInput.value : '';
-  let searchType = searchTypeInput ? searchTypeInput.value : 'all';
 
   // Check if searchTerm is empty and handle it as needed
   if (!searchTerm.trim()) {
@@ -22,7 +18,7 @@ async function search() {
 
   try {
     // Make a fetch request to the server API endpoint for searching PDFs
-    let response = await fetch(`/api/pdfs/${searchTerm}/${searchType}`);
+    let response = await fetch(`/api/pdfs/${searchTerm}`);
     let pdfs = await response.json();
 
     // Display the information in the HTML
@@ -42,9 +38,8 @@ async function search() {
           <th>Title</th>
           <th>Author</th>
           <th>Creator</th>
-          <th>Creation Date</th>
-          <th>Producer</th>
-          <th>Number of Pages</th>
+          <th>ModDate</th>
+          <th>CreationDate</th>
           <th>Download</th>
         </tr>
       `;
@@ -53,18 +48,17 @@ async function search() {
       // Create the table body
       let tableBody = document.createElement('tbody');
       pdfs.forEach(pdf => {
-        // Check if the expected properties are present in the PDF object
-        let title = pdf.pdfDescription && pdf.pdfDescription.info ? pdf.pdfDescription.info.Title : 'N/A';
+        let metadata = pdf.metadata;
 
+        // Create a table row for each PDF
         let row = document.createElement('tr');
         row.innerHTML = `
-          <td>${title}</td>
-          <td>${pdf.pdfDescription?.info?.Author || 'N/A'}</td>
-          <td>${pdf.pdfDescription?.info?.Creator || 'N/A'}</td>
-          <td>${pdf.pdfDescription?.info?.CreationDate || 'N/A'}</td>
-          <td>${pdf.pdfDescription?.info?.Producer || 'N/A'}</td>
-          <td>${pdf.pdfDescription?.numpages || 'N/A'}</td>
-          <td><a href="/api/pdfs/download/${pdf.pdfId}" download>Download PDF</a></td>
+          <td>${metadata.Title || 'N/A'}</td>
+          <td>${metadata.Author || 'N/A'}</td>
+          <td>${metadata.Creator || 'N/A'}</td>
+          <td>${metadata.ModDate || 'N/A'}</td>
+          <td>${metadata.CreationDate || 'N/A'}</td>
+          <td><a href="${pdf.downloadLink}" download>Download PDF</a></td>
         `;
 
         tableBody.appendChild(row);

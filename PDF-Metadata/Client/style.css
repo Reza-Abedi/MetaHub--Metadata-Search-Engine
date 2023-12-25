@@ -81,28 +81,13 @@ button {
   background-color: #f2f2f2;
 }
 
-.result {
-  position: relative;
-  margin-bottom: 20px;
-}
-
-h2 {
-  margin-bottom: 5px;
-}
-
-.meta {
-  margin: 2px 0;
-}
-
-.download {
-  display: block;
-  margin-top: 5px;
+a {
   text-decoration: none;
   color: #007bff;
   font-family: 'Montserrat', sans-serif;
 }
 
-.download:hover {
+a:hover {
   text-decoration: underline;
 }
 
