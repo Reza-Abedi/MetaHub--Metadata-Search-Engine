@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PowerPoint Search</title>
+  <link rel="stylesheet" href="ppt-style.css">
+</head>
+
+<body>
+  <header>
+    <h1>PowerPoint Metadata Search</h1>
+    <div class="search-container">
+      <form name="searchForm" onsubmit="search(); return false" class="flex-container">
+        <div class="input-group">
+          <input name="term" placeholder="Search term">
+        </div>
+        <div class="select-group">
+          <label for="titleSort">Sort by Title:</label>
+          <select name="titleSort" id="titleSort">
+            <option value="ascending">A to Z</option>
+            <option value="descending">Z to A</option>
+          </select>
+        </div>
+        <button type="submit">Search</button>
+      </form>
+    </div>
+  </header>
+  <div class="searchResults"></div>
+
+  
+  <!--a anchor tag , creates to anchor other web pages. -->
+  <p>There are also  <a href="index.html">image,   <a href="pdf-index.html">pdf,  <a href="music-index.html">music</a>,  pages here.</p>
+
+
+  <script src="ppt-main.js"></script>
+</body>
+
+</html>
