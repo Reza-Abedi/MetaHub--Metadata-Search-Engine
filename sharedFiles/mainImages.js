@@ -2,13 +2,10 @@
 
 // Function to perform a search based on user input
 async function searchMetadata() {
-  // Get the search term from the input field
   const searchTerm = document.getElementById('searchInput').value;
-  // Get the selected search type from the dropdown
   const searchType = document.getElementById('searchType').value;
 
   // Make a request to the server's search API
-  // Update the API endpoint to reflect the shared structure
   const response = await fetch(`/api/images/${searchTerm}/${searchType}`);
   const data = await response.json();
 
@@ -31,7 +28,6 @@ async function displayResults(data) {
   const table = document.createElement('table');
   table.classList.add('resultTable');
 
-  // Create the table header
   const headerRow = document.createElement('tr');
   const headerColumns = ['Name', 'Make', 'Model', 'Latitude', 'Longitude', 'CreateDate', 'Orientation', 'Width', 'Height', 'Image Preview'];
 
@@ -43,7 +39,6 @@ async function displayResults(data) {
 
   table.appendChild(headerRow);
 
-  // Iterate through the data and create table rows
   data.forEach(item => {
     const row = document.createElement('tr');
 
@@ -52,7 +47,6 @@ async function displayResults(data) {
 
     metadataColumns.forEach(column => {
       const cell = document.createElement('td');
-      // Convert CreateDate to a readable date format
       if (column === 'CreateDate' && item.imageDescription[column]) {
         const createDate = new Date(item.imageDescription[column]);
         cell.textContent = createDate.toLocaleString();
@@ -67,6 +61,7 @@ async function displayResults(data) {
     const imageCell = document.createElement('td');
     const imageFileName = item.imageName;
     const imageLink = document.createElement('a');
+                // Display image preview with latitude & longitude (Resolve by Shiva)
     imageLink.setAttribute("href", `https://maps.google.com/?q=${item.imageDescription.latitude},${item.imageDescription.longitude}`);
     imageLink.setAttribute("target", "_blank");
     // Update the image path to reflect the shared structure
