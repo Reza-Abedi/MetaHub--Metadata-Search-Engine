@@ -9,25 +9,23 @@
 </head>
 
 <body>
-  <!-- Navigation Menu -->
-  <nav>
-    <ul>
-      <li><a href="PDF.html">PDF Metadata</a></li>
-      <li><a href="PPT.html">PPT Metadata</a></li>
-      <li><a href="Music.html">Music Metadata</a></li>
-      <li><a href="Images.html">Image Metadata</a></li>
-    </ul>
+  
+  <nav class="navigation-menu">
+    <a href="PDF.html">PDF Metadata</a>
+    <a href="PPT.html">PPT Metadata</a>
+    <a href="Music.html">Music Metadata</a>
+    <a href="Images.html">Image Metadata</a>
   </nav>
 
   <header>
     <h1>Music Metadata Search</h1>
-    <!-- Display the current search term -->
+    
     <p id="currentSearchTerm"></p>
   </header>
 
   <div class="main-container">
     <div class="sidebar">
-      <!-- Search form -->
+      
       <form name="searchForm" onsubmit="search(); return false">
         <input name="term" placeholder="Search for music...">
         <button type="submit">Search</button>
@@ -41,7 +39,7 @@
           </select>
         </p>
 
-        <!-- Advanced search menu goes here -->
+        
         <fieldset>
           <legend>Advanced Search</legend>
           <label>
@@ -60,10 +58,10 @@
             <input type="radio" name="durationSearch" value="smaller">
             Duration < 30
           </label>
-          <!-- Add more advanced search options here if needed -->
+          
         </fieldset>
 
-        <!-- Sorting dropdown menu -->
+        
         <label>
           Sort by:
           <select name="sortOption" onchange="search()">
@@ -75,7 +73,7 @@
     </div>
 
     <div class="content">
-      <!-- Search results go here -->
+      
       <div class="searchResults">
         <p class="resultMessage">Search for a song.</p>
       </div>

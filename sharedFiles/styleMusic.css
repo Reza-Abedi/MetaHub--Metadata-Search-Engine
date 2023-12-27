@@ -27,7 +27,7 @@ body {
 }
 
 header {
-  background-color: #007bff;
+  background-color: #3498db;
   color: #fff;
   padding: 10px;
   text-align: center;
@@ -60,7 +60,7 @@ button {
 }
 
 button {
-  background-color: #007bff;
+  background-color: #3498db;
   color: #fff;
   cursor: pointer;
 }
@@ -80,7 +80,7 @@ button {
   text-align: center;
 }
 
-/* Each table row is within a blue box */
+
 .searchResults table {
   width: 100%;
   border-collapse: collapse;
