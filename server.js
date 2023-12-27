@@ -4,11 +4,17 @@ import express from 'express';
 // Import the database driver
 import mysql from 'mysql2/promise';
 
+
+
 // Create a web server named app
 const app = express();
 
+
+
 // Serve all files in the sharedFiles folder
 app.use(express.static('sharedFiles'));
+
+
 
 // Start the server on a certain port
 // and write to the terminal which port...
@@ -180,6 +186,8 @@ app.get('/api/music/download/:musicId', (request, response) => {
   const filePath = `sharedFiles/${request.params.musicId}`; // Update the path
   response.download(filePath);
 });
+
+
 
 // API route for searching Images by metadata and providing download links
 app.get('/api/images/:searchTerm/:searchType', async (request, response) => {

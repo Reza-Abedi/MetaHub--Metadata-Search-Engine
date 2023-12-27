@@ -65,7 +65,7 @@ async function displayResults(data) {
     imageLink.setAttribute("href", `https://maps.google.com/?q=${item.imageDescription.latitude},${item.imageDescription.longitude}`);
     imageLink.setAttribute("target", "_blank");
     // Update the image path to reflect the shared structure
-    const imagePath = `/sharedFiles/images/${imageFileName}`;
+    const imagePath = `/images/${imageFileName}`;
     const imagePreview = document.createElement('img');
     imagePreview.src = imagePath;
     imagePreview.alt = 'Image Preview';
