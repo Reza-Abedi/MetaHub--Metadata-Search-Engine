@@ -79,26 +79,29 @@ The database employs a common structure for each content type, with a unique ide
 
 ---
 
-# Extraction Script 
+# Extract and Insert Metadata into MetaHub Database 
 
-### Image Metadata Extraction Script
-The provided JavaScript script serves to extract metadata from JPEG images located in a specified directory (`Image`) using the `exifr` library. The extracted metadata is subsequently inserted into the "MetaHub" MySQL database's "Images" table. Below is a concise overview:
+**Note:** The source files for GitHub ("Githop Extract files") are expected to be located in the `2-Metadata_Extraction` folder. 
 
-#### Image Metadata Extraction Script
-This JavaScript script makes use of the `exifr` library to extract comprehensive metadata from JPEG images found within the designated "Image" directory. The extracted information encompasses various details, including camera settings, location data, and timestamps. The script facilitates the insertion of this metadata into the "Images" table within the "MetaHub" MySQL database. Database interaction is managed through a MySQL connection pool, and successful metadata insertions are logged for reference.
+This folder contains code snippets written in JavaScript to extract metadata from various types of digital content (images, music files, PDFs, and PowerPoints) and insert them into the MetaHub database.
 
-#### Key Components
-- **exifr:** Library designed for extracting EXIF data from images.
-- **mysql2:** MySQL library optimized for asynchronous operations.
-- **insertMetadata:** Function responsible for inserting image metadata into the connected MySQL database.
-- **processImages:** Function designed to iterate through JPEG images, extract metadata, and subsequently insert it into the connected database.
+### Image Metadata Extraction
+The code utilizes the `exifr` library to parse EXIF data from JPEG images. Extracted metadata is then inserted into the MetaHub database's Images table, storing information such as image name and description in JSON format.
 
-#### Usage
-1. Install dependencies: `exifr`, `fs`, and `mysql2`.
-2. Configure MySQL connection details within the script.
-3. Execute the script to initiate the processing and insertion of metadata for JPEG images residing in the "Image" directory.
+### Music Metadata Extraction
+For music files, the `music-metadata` library is employed to extract metadata. Unnecessary metadata fields are removed before inserting relevant information, including music name and description, into the MetaHub Musics table.
 
---
+### PDF Metadata Extraction
+The code uses the `pdf-parse-fork` library to extract metadata, including the number of pages and additional information, from PDF files. The extracted data, along with the full text, is inserted into the MetaHub PDFs table.
+
+### PowerPoint Metadata Insertion
+PowerPoint metadata stored in a JSON file is read and processed. Unnecessary fields are removed, and the remaining metadata is inserted into the MetaHub PowerPoints table.
+
+### Database Connection
+A MySQL database connection is established using the `mysql2` library, with a connection pool for efficient handling of database connections. The connection details, including host, port, user, password, and database name, are specified in the code.
+
+
+
 
 
 
