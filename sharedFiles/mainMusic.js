@@ -1,9 +1,9 @@
+// mainMusic.js
+
 // Declare a new function named search
 async function search() {
   // Read the user input from the term field in the form searchForm
   let searchTerm = document.forms.searchForm.term.value;
-  // Read the searchType
-  let searchType = document.forms.searchForm.searchType.value;
 
   // Read the selected duration search option
   let durationSearchRadio = document.querySelector('input[name="durationSearch"]:checked');
@@ -12,8 +12,9 @@ async function search() {
   // Read the selected sorting option
   let sortOption = document.forms.searchForm.sortOption.value;
 
- // Read the JSON
-  let rawData = await fetch(`/api/music/${searchTerm}/${searchType}/${durationSearch}`);
+  // Read the JSON
+  let rawData = await fetch(`/api/music/${searchTerm}/${durationSearch}`);
+  
   // Convert JSON to a JavaScript data structure
   let songs = await rawData.json();
 

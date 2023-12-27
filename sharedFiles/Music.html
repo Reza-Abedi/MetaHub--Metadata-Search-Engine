@@ -9,7 +9,7 @@
 </head>
 
 <body>
-  
+  <!-- Navigation Menu -->
   <nav class="navigation-menu">
     <a href="PDF.html">PDF Metadata</a>
     <a href="PPT.html">PPT Metadata</a>
@@ -19,27 +19,18 @@
 
   <header>
     <h1>Music Metadata Search</h1>
-    
+    <!-- Display the current search term -->
     <p id="currentSearchTerm"></p>
   </header>
 
   <div class="main-container">
     <div class="sidebar">
-      
+      <!-- Search form -->
       <form name="searchForm" onsubmit="search(); return false">
-        <input name="term" placeholder="Search for music...">
+        <input name="term" placeholder="Search by Song, Artist, or Album...">
         <button type="submit">Search</button>
-        <p>
-          Search in:
-          <select name="searchType">
-            <option value="all">All information about songs</option>
-            <option value="artist">Artist name</option>
-            <option value="album">Album name</option>
-            <option value="title">Song title</option>
-          </select>
-        </p>
 
-        
+        <!-- Advanced search menu goes here -->
         <fieldset>
           <legend>Advanced Search</legend>
           <label>
@@ -58,12 +49,12 @@
             <input type="radio" name="durationSearch" value="smaller">
             Duration < 30
           </label>
-          
+          <!-- Add more advanced search options here if needed -->
         </fieldset>
 
-        
+        <!-- Sorting dropdown menu -->
         <label>
-          Sort by Song:
+          Sort by:
           <select name="sortOption" onchange="search()">
             <option value="asc">A to Z</option>
             <option value="desc">Z to A</option>
@@ -73,7 +64,7 @@
     </div>
 
     <div class="content">
-      
+      <!-- Search results go here -->
       <div class="searchResults">
         <p class="resultMessage">Search for a song.</p>
       </div>

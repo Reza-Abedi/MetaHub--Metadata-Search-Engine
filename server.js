@@ -134,59 +134,65 @@ app.get('/api/pdfs/download/:pdfName', (request, response) => {
   }
 });
 
+
+
 // API route for searching Music by metadata and providing download links
-app.get('/api/music/:searchTerm/:searchType/:durationSearch', async (request, response) => {
-  let searchTerm = request.params.searchTerm;
-  let searchType = request.params.searchType;
-  let durationSearch = request.params.durationSearch;
+app.get('/api/music/:searchTerm/:durationSearch', async (request, response) => {
+  try {
+    let searchTerm = request.params.searchTerm;
+    let durationSearch = request.params.durationSearch;
 
-  // Construct the SQL query based on the search type and duration search
-  let sql;
+    // Construct the SQL query based on the search term and duration search
+    let sql;
 
-  if (durationSearch === 'bigger') {
-    sql = `
-      SELECT *
-      FROM Musics
-      WHERE LOWER(JSON_UNQUOTE(JSON_EXTRACT(musicDescription, '$.common.title'))) LIKE LOWER(?)
-        AND CAST(JSON_UNQUOTE(JSON_EXTRACT(musicDescription, '$.format.duration')) AS DECIMAL(10, 2)) > 30
-    `;
-  } else if (durationSearch === 'equal') {
-    sql = `
-      SELECT *
-      FROM Musics
-      WHERE LOWER(JSON_UNQUOTE(JSON_EXTRACT(musicDescription, '$.common.title'))) LIKE LOWER(?)
-        AND CAST(JSON_UNQUOTE(JSON_EXTRACT(musicDescription, '$.format.duration')) AS DECIMAL(10, 2)) = 30
-    `;
-  } else if (durationSearch === 'smaller') {
-    sql = `
-      SELECT *
-      FROM Musics
-      WHERE LOWER(JSON_UNQUOTE(JSON_EXTRACT(musicDescription, '$.common.title'))) LIKE LOWER(?)
-        AND CAST(JSON_UNQUOTE(JSON_EXTRACT(musicDescription, '$.format.duration')) AS DECIMAL(10, 2)) < 30
-    `;
-  } else {
-    // Default to all durations
-    sql = `
-      SELECT *
-      FROM Musics
-      WHERE LOWER(JSON_UNQUOTE(JSON_EXTRACT(musicDescription, '$.common.title'))) LIKE LOWER(?)
-    `;
+    if (durationSearch === 'bigger') {
+      sql = `
+        SELECT *
+        FROM Musics
+        WHERE LOWER(JSON_UNQUOTE(JSON_EXTRACT(musicDescription, '$.common.title'))) LIKE LOWER(?)
+          OR LOWER(JSON_UNQUOTE(JSON_EXTRACT(musicDescription, '$.common.artist'))) LIKE LOWER(?)
+          OR LOWER(JSON_UNQUOTE(JSON_EXTRACT(musicDescription, '$.common.album'))) LIKE LOWER(?)
+          AND CAST(JSON_UNQUOTE(JSON_EXTRACT(musicDescription, '$.format.duration')) AS DECIMAL(10, 2)) > 30
+      `;
+    } else if (durationSearch === 'equal') {
+      sql = `
+        SELECT *
+        FROM Musics
+        WHERE LOWER(JSON_UNQUOTE(JSON_EXTRACT(musicDescription, '$.common.title'))) LIKE LOWER(?)
+          OR LOWER(JSON_UNQUOTE(JSON_EXTRACT(musicDescription, '$.common.artist'))) LIKE LOWER(?)
+          OR LOWER(JSON_UNQUOTE(JSON_EXTRACT(musicDescription, '$.common.album'))) LIKE LOWER(?)
+          AND CAST(JSON_UNQUOTE(JSON_EXTRACT(musicDescription, '$.format.duration')) AS DECIMAL(10, 2)) = 30
+      `;
+    } else if (durationSearch === 'smaller') {
+      sql = `
+        SELECT *
+        FROM Musics
+        WHERE LOWER(JSON_UNQUOTE(JSON_EXTRACT(musicDescription, '$.common.title'))) LIKE LOWER(?)
+          OR LOWER(JSON_UNQUOTE(JSON_EXTRACT(musicDescription, '$.common.artist'))) LIKE LOWER(?)
+          OR LOWER(JSON_UNQUOTE(JSON_EXTRACT(musicDescription, '$.common.album'))) LIKE LOWER(?)
+          AND CAST(JSON_UNQUOTE(JSON_EXTRACT(musicDescription, '$.format.duration')) AS DECIMAL(10, 2)) < 30
+      `;
+    } else {
+      // Default to all durations
+      sql = `
+        SELECT *
+        FROM Musics
+        WHERE LOWER(JSON_UNQUOTE(JSON_EXTRACT(musicDescription, '$.common.title'))) LIKE LOWER(?)
+          OR LOWER(JSON_UNQUOTE(JSON_EXTRACT(musicDescription, '$.common.artist'))) LIKE LOWER(?)
+          OR LOWER(JSON_UNQUOTE(JSON_EXTRACT(musicDescription, '$.common.album'))) LIKE LOWER(?)
+      `;
+    }
+
+    // Make a database query and remember the result using the search term
+    let result = await query(sql, Array(3).fill('%' + searchTerm + '%'));
+
+    // Send a response to the client
+    response.json(result);
+  } catch (error) {
+    console.error('Error searching Music:', error);
+    response.status(500).json({ error: 'Internal Server Error' });
   }
-
-  // Make a database query and remember the result using the search term
-  let result = await query(sql, ['%' + searchTerm + '%']);
-
-  // Send a response to the client
-  response.json(result);
 });
-
-// A route for downloading Music files
-app.get('/api/music/download/:musicId', (request, response) => {
-  // Replace the following line with logic to serve the file for download
-  const filePath = `sharedFiles/${request.params.musicId}`; // Update the path
-  response.download(filePath);
-});
-
 
 
 // API route for searching Images by metadata and providing download links
