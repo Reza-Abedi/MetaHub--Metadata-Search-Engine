@@ -41,6 +41,39 @@ MohammadReza Abedi: As the project manager, He took the lead in mapping out the 
 Yinghua Zhu: 
 
 Shiva Paknegar: 
- 
+
+
+
+
+## Database Report: MetaHub
+
+### Database Structure:
+
+#### Images Table:
+**Columns:**
+- `imageId` (INT): Auto-incremented primary key for image identification.
+- `imageName` (VARCHAR(100)): Unique name of the image.
+- `imageDescription` (JSON): JSON data structure for storing image metadata.
+
+#### PowerPoints Table:
+**Columns:**
+- `pptId` (INT): Auto-incremented primary key for PowerPoint identification.
+- `pptName` (VARCHAR(100)): Unique name of the PowerPoint.
+- `pptDescription` (JSON): JSON data structure for storing PowerPoint metadata.
+
+#### Musics Table:
+**Columns:**
+- `musicId` (INT): Auto-incremented primary key for music identification.
+- `musicName` (VARCHAR(100)): Unique name of the music.
+- `musicDescription` (JSON): JSON data structure for storing music metadata.
+
+#### PDFs Table:
+**Columns:**
+- `pdfId` (INT): Auto-incremented primary key for PDF identification.
+- `pdfName` (VARCHAR(100)): Unique name of the PDF.
+- `pdfDescription` (JSON): JSON data structure for storing PDF metadata.
+
+### Explanation:
+The database employs a common structure for each content type, with a unique identifier (`Id`), a name field (`Name`) to ensure uniqueness, and a `Description` field stored as JSON to accommodate various metadata attributes associated with each type of content.
 
 
