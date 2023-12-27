@@ -84,8 +84,6 @@ The database employs a common structure for each content type, with a unique ide
 ### Image Metadata Extraction Script
 The provided JavaScript script serves to extract metadata from JPEG images located in a specified directory (`Image`) using the `exifr` library. The extracted metadata is subsequently inserted into the "MetaHub" MySQL database's "Images" table. Below is a concise overview:
 
-#### Overview
-
 #### Image Metadata Extraction Script
 This JavaScript script makes use of the `exifr` library to extract comprehensive metadata from JPEG images found within the designated "Image" directory. The extracted information encompasses various details, including camera settings, location data, and timestamps. The script facilitates the insertion of this metadata into the "Images" table within the "MetaHub" MySQL database. Database interaction is managed through a MySQL connection pool, and successful metadata insertions are logged for reference.
 
@@ -99,6 +97,9 @@ This JavaScript script makes use of the `exifr` library to extract comprehensive
 1. Install dependencies: `exifr`, `fs`, and `mysql2`.
 2. Configure MySQL connection details within the script.
 3. Execute the script to initiate the processing and insertion of metadata for JPEG images residing in the "Image" directory.
+
+--
+
 
 
 
