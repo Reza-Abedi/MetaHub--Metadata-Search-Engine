@@ -1,4 +1,4 @@
-# Metadata Project:Metadata Search Engine (MetaHub DB)  
+# Metadata Search Engine (Group3) 
 
  
 ## Project Overview 
@@ -99,6 +99,41 @@ PowerPoint metadata stored in a JSON file is read and processed. Unnecessary fie
 
 ### Database Connection
 A MySQL database connection is established using the `mysql2` library, with a connection pool for efficient handling of database connections. The connection details, including host, port, user, password, and database name, are specified in the code.
+
+---
+
+# Search Applications
+
+## Music Metadata Search Application
+This eplanation contains code for a music metadata search application. Users can search for songs based on various criteria, and the application retrieves and displays relevant information from a MySQL database.
+
+### Team Member Responsible
+This task was implemented by **Shiva Paknegar**.
+
+### Project Structure
+
+- **Client**: Contains the HTML, CSS, and JavaScript files for the frontend.
+  - `index.html`: Defines the structure of the web page.
+  - `style.css`: Provides styles for the HTML elements.
+  - `main.js`: Handles client-side functionality, including music search and result display.
+
+- **Server**:
+  - `main.js`: An Express.js server file that serves static files from the 'Client' folder and handles API requests for music search.
+  
+### How to Run
+1. Clone this repository.
+2. Install dependencies using `npm install`.
+3. Start the server with `npm start`.
+
+### Music Search API
+The application exposes an API endpoint for music search:
+- Endpoint: `/api/music/:searchTerm/:searchType/:durationSearch`
+  - `searchTerm`: The term to search for.
+  - `searchType`: Type of search (artist, album, title, or all).
+  - `durationSearch`: Duration filter (all, bigger, equal, smaller).
+
+#### License
+This project is licensed under the [MIT License](LICENSE).
 
 
 
