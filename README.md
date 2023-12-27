@@ -108,7 +108,7 @@ A MySQL database connection is established using the `mysql2` library, with a co
 This eplanation contains code for a music metadata search application. Users can search for songs based on various criteria, and the application retrieves and displays relevant information from a MySQL database.
 
 ### Team Member Responsible
-This task was implemented by **Shiva Paknegar**.
+This task was implemented by **Shiva Paknegar** - [GitHub Profile](https://github.com/shivapaknegar)
 
 ### Project Structure
 
@@ -133,7 +133,9 @@ The application exposes an API endpoint for music search:
   - `durationSearch`: Duration filter (all, bigger, equal, smaller).
 
 #### License
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [MIT License](https://github.com/shivapaknegar).
+
+
 
 
 
