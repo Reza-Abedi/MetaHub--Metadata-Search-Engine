@@ -25,44 +25,22 @@ New user stories may be added or old ones removed by the product owner, but thes
 Communication: We established clear communication channels using Teams, ensuring effective information exchange and prompt issue resolution. 
 
 ### Project Management: 
-- Jira (Kanban) was employed for task organization, progress tracking, and task assignment. 
-This tool helped us maintain clarity on project timelines and individual responsibilities. 
+- Jira (Kanban) was employed for task organization, progress tracking, and task assignment. We employed Jira(Kanban) to streamline these processes and ensure a well-organized development workflow.  
 
- 
+### Code Collaboration: 
+We adopted a feature branch strategy using Git. Each team member worked on a specific feature in a separate branch before merging into the main branch. Code reviews were regularly conducted to ensure code quality by Mohammadreza (Reza)
 
- 
-
- 
-
-Code Collaboration: 
-
-We adopted a feature branch strategy using Git. Each team member worked on a specific feature in a separate branch before merging into the main branch. Code reviews were regularly conducted to ensure code quality. 
-
- 
-
-Meetings: 
-
+### Meetings-Microsoft Teams: 
 Regular team meetings were scheduled to discuss progress, challenges, and coordinate tasks. These meetings fostered a collaborative environment and allowed for quick problem resolution. 
 
+
+
+MohammadReza Abedi: As the project manager, He took the lead in mapping out the project. This involved overseeing the overall project structure, coordinating task assignments, and ensuring alignment with project timelines. Throughout the process, Reza took on the responsibility of ensuring that the collected sources aligned seamlessly with the designated implementation patterns. This quality check was crucial for maintaining consistency in our work. 
+
+
+Yinghua Zhu: 
+
+Shiva Paknegar: 
  
 
-Project Management and Individual Contributions: 
 
-During the project, effective project management was crucial for coordinating tasks, tracking progress, and assigning responsibilities. We employed Jira(Kanban) to streamline these processes and ensure a well-organized development workflow. Each team member had specific roles and responsibilities within the project: 
-
- 
- 
-
-MohammadReza Abedi: As the project manager, I took the lead in mapping out the project. This involved overseeing the overall project structure, coordinating task assignments, and ensuring alignment with project timelines. 
-
-Yinghua Zhu: Ingwa played a crucial role in sourcing and collecting relevant materials. Their contribution was instrumental in gathering the necessary information for the project's implementation. 
-
-Shiva Paknegar: Shiva took charge of collecting coding patterns essential for our development tasks. Their role was pivotal in establishing a foundation for our coding practices. 
-
-Meetings and Collaboration: Regular team meetings provided a platform for collective decision-making. During these sessions, we drew conclusions on how to integrate resources and connect them to the established coding patterns. Collective participation and testing on models allowed us to refine our approach. 
-
- 
-
-Throughout the process, Reza took on the responsibility of ensuring that the collected sources aligned seamlessly with the designated implementation patterns. This quality check was crucial for maintaining consistency in our work. 
-
-The collaborative efforts of the team members in their respective roles, combined with the use of Jira(Kanban), contributed significantly to maintaining clarity on project timelines and individual responsibilities. 
