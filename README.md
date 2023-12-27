@@ -122,9 +122,9 @@ This task was implemented by **Shiva Paknegar** - [GitHub Profile](https://githu
   - `main.js`: An Express.js server file that serves static files from the 'Client' folder and handles API requests for music search.
   
 - **How to Run**:
-- 1. Clone this repository.
-- 2. Install dependencies using `npm install`.
-- 3. Start the server with `npm start`.
+  - 1. Clone this repository.
+  - 2. Install dependencies using `npm install`.
+  - 3. Start the server with `npm start`.
 
 - **Music Search API**:The application exposes an API endpoint for music search:
 
@@ -135,11 +135,11 @@ This task was implemented by **Shiva Paknegar** - [GitHub Profile](https://githu
 
 **Search Results**:
 The search results are displayed in a table with the following columns:
-    - Song
-    - Artist
-    - Album
-    - Duration
-    - Play 
+  - Song
+  - Artist
+  - Album
+  - Duration
+  - Play 
 #### License
 This project is licensed under the [MIT License](https://github.com/shivapaknegar).
 
@@ -151,11 +151,9 @@ This project is licensed under the [MIT License](https://github.com/shivapaknega
 This explanation contains code for a PDF metadata search application. Users can search for PDFs based on various criteria, and the application retrieves and displays relevant information from a MySQL database.
 
 ### Team Member Responsible
-
 This task was implemented by **Shiva Paknegar** - [GitHub Profile](https://github.com/shivapaknegar)
 
 ### Project Structure
-
 - **Client**: Contains the HTML, CSS, and JavaScript files for the frontend.
   - `index.html`: Defines the structure of the web page.
   - `style.css`: Provides styles for the HTML elements.
@@ -165,24 +163,23 @@ This task was implemented by **Shiva Paknegar** - [GitHub Profile](https://githu
   - `main.js`: An Express.js server file that serves static files from the 'Client' folder and handles API requests for PDF search.
   
 - **How to Run**:
-  - 1. Clone this repository.
-  - 2.  Install dependencies using `npm install`.
-  - 3. Start the server with `npm start`.
+   - 1. Clone this repository.
+   - 2.  Install dependencies using `npm install`.
+   - 3. Start the server with `npm start`.
 
 - **PDF Search API**:
 The application exposes an API endpoint for PDF search:
-- Endpoint: `/api/pdfs/:searchTerm`
-  - `searchTerm`: The term to search for.
+   - Endpoint: `/api/pdfs/:searchTerm`
+   - `searchTerm`: The term to search for.
 
 - **Search Results**:
 The search results are displayed in a table with the following columns:
-- Title
-- Author
-- Creator
-- ModDate
-- CreationDate
-- Download
-
+  - Title
+  - Author
+  - Creator
+  - ModDate
+  - CreationDate
+  - Download
 #### License
 This project is licensed under the [MIT License](https://github.com/shivapaknegar).
 
@@ -196,7 +193,6 @@ This explanation contains code for an image metadata search application. Users c
 This task was implemented by **Shiva Paknegar** - [GitHub Profile](https://github.com/Yinghua009)
 
 ### Project Structure
-
 - **Client**: Contains the HTML, CSS, and JavaScript files for the frontend.
   - `index.html`: Defines the structure of the web page.
   - `style.css`: Provides styles for the HTML elements.
@@ -206,35 +202,30 @@ This task was implemented by **Shiva Paknegar** - [GitHub Profile](https://githu
   - `server.js`: An Express.js server file that serves static files from the 'client' folder and handles API requests for image search.
 
 - **How to Run**:
-- 1. Clone this repository.
-- 2. Install dependencies using `npm install`.
-- 3. Start the server with `npm start`.
+  - 1. Clone this repository.
+  - 2. Install dependencies using `npm install`.
+  - 3. Start the server with `npm start`.
 
 - **Image Search API**:
 The application exposes an API endpoint for image search:
-- Endpoint: `/api/search/:searchTerm/:searchType`
+  - Endpoint: `/api/search/:searchTerm/:searchType`
   - `searchTerm`: The term to search for.
   - `searchType`: Type of search (Make, Model, or all).
 
 - **Image Search Results**:
 The image search results are displayed in a table with the following columns:
-- Name
-- Make
-- Model
-- Latitude
-- Longitude
-- CreateDate
-- Orientation
-- Width
-- Height
-- Image Preview
-
+  - Name
+  - Make
+  - Model
+  - Latitude
+  - Longitude
+  - CreateDate
+  - Orientation
+  - Width
+  - Height
+  - Image Preview
 #### License
 This project is licensed under the [MIT License](https://github.com/Yinghua009).
-
-
-
-
 
 
 ## PowerPoint Metadata Search Application
@@ -245,7 +236,6 @@ This explanation contains code for a PowerPoint metadata search application. Use
 This task was implemented by **MohammadReza Abedi** - [GitHub Profile](https://github.com/Reza-Abedi)
 
 ### Project Structure
-
 - **Client**: Contains the HTML, CSS, and JavaScript files for the frontend.
   - `index.html`: Defines the structure of the web page.
   - `style.css`: Provides styles for the HTML elements.
@@ -255,9 +245,9 @@ This task was implemented by **MohammadReza Abedi** - [GitHub Profile](https://g
   - `server.js`: An Express.js server file that serves static files from the 'Client' folder and handles API requests for PowerPoint search.
 
 - **How to Run**
-- 1. Clone this repository.
-- 2. Install dependencies using `npm install`.
-- 3. Start the server with `npm start`.
+  - 1. Clone this repository.
+  - 2. Install dependencies using `npm install`.
+  - 3. Start the server with `npm start`.
 
 - **PowerPoint Search API**
 The application exposes an API endpoint for PowerPoint search:
@@ -266,19 +256,18 @@ The application exposes an API endpoint for PowerPoint search:
   - Query Parameter: `titleSort` (Sort by Title: "ascending" or "descending").
 
 - **Search Form**
-- `Search Term`: Input for the term to search for.
-- `Sort by Title`: Dropdown to select the sorting order for presentation titles.
+  - `Search Term`: Input for the term to search for.
+  - `Sort by Title`: Dropdown to select the sorting order for presentation titles.
 
 - **Search Results**:
 The search results are displayed in a table with the following columns:
-- Title
-- Company
-- Timestamp
-- Word Count
-- Creation Date
-- Last Modified
-- Download
-
+  - Title
+  - Company
+  - Timestamp
+  - Word Count
+  - Creation Date
+  - Last Modified
+  - Download
 ### License
 This project is licensed under the [MIT License](https://github.com/Reza-Abedi).
 
