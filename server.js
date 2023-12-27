@@ -75,40 +75,57 @@ app.get('/api/powerpoints/download/:pptName', (request, response) => {
   const filePath = `sharedFiles/${request.params.pptName}`; // Update the path
   response.download(filePath);
 });
-
-// API route for searching PDFs by metadata and providing download links
 app.get('/api/pdfs/:searchTerm', async (request, response) => {
-  let searchTerm = request.params.searchTerm;
-
-  // Modify the SQL query based on the selected sorting option
-  let sql = `
-    SELECT *
-    FROM PDFs
-    WHERE LOWER(pdfDescription->'$.info.Title') LIKE LOWER(?)
-       OR LOWER(pdfDescription->'$.info.Author') LIKE LOWER(?)
-       OR LOWER(pdfDescription->'$.info.Creator') LIKE LOWER(?)
-       OR LOWER(pdfDescription->'$.info.ModDate') LIKE LOWER(?)
-       OR LOWER(pdfDescription->'$.info.Keywords') LIKE LOWER(?)
-       OR LOWER(pdfDescription->'$.info.Producer') LIKE LOWER(?)
-       OR LOWER(pdfDescription->'$.info.CreationDate') LIKE LOWER(?)
-  `;
-
-  let pdfs = await query(sql, Array(7).fill('%' + searchTerm + '%'));
-
-  // Modify the response structure based on your database schema
-  const formattedResponse = pdfs.map(pdf => ({
-    metadata: pdf.pdfDescription.info,
-    downloadLink: `/api/pdfs/download/${pdf.pdfId}`
-  }));
-
-  response.json(formattedResponse);
+  try {
+    let searchTerm = request.params.searchTerm;
+ 
+    let sql = `
+      SELECT *
+      FROM PDFs
+      WHERE LOWER(pdfDescription->'$.info.Title') LIKE LOWER(?)
+         OR LOWER(pdfDescription->'$.info.Author') LIKE LOWER(?)
+         OR LOWER(pdfDescription->'$.info.Creator') LIKE LOWER(?)
+         OR LOWER(pdfDescription->'$.info.ModDate') LIKE LOWER(?)
+         OR LOWER(pdfDescription->'$.info.Keywords') LIKE LOWER(?)
+         OR LOWER(pdfDescription->'$.info.Producer') LIKE LOWER(?)
+         OR LOWER(pdfDescription->'$.info.CreationDate') LIKE LOWER(?)
+    `;
+ 
+    let pdfs = await query(sql, Array(7).fill('%' + searchTerm + '%'));
+ 
+    const formattedResponse = pdfs.map(pdf => ({
+      metadata: pdf.pdfDescription.info,
+      downloadLink: `/api/pdfs/download/${encodeURIComponent(pdf.pdfName)}` // Encode pdfName
+    }));
+ 
+    response.json(formattedResponse);
+  } catch (error) {
+    console.error('Error searching PDFs:', error);
+    response.status(500).json({ error: 'Internal Server Error' });
+  }
 });
-
-// API route for downloading PDFs
-app.get('/api/pdfs/download/:pdfId', (request, response) => {
-  // Replace the following line with logic to serve the file for download
-  const filePath = `sharedFiles/${request.params.pdfId}`; // Update the path
-  response.download(filePath);
+ 
+app.get('/api/pdfs/download/:pdfName', (request, response) => {
+  try {
+    const pdfName = request.params.pdfName;
+ 
+    // Construct the file path based on the PDF name
+    const filePath = `sharedFiles/PDF/${pdfName}`;
+ 
+    // Set the content type to 'application/pdf'
+    response.setHeader('Content-Type', 'application/pdf');
+ 
+    // Serve the file for download
+    response.download(filePath, pdfName, (err) => {
+      if (err) {
+        console.error('Error downloading PDF:', err);
+        response.status(500).json({ error: 'Internal Server Error' });
+      }
+    });
+  } catch (error) {
+    console.error('Error downloading PDF:', error);
+    response.status(500).json({ error: 'Internal Server Error' });
+  }
 });
 
 // API route for searching Music by metadata and providing download links
