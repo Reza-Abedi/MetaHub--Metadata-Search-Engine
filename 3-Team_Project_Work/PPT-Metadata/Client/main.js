@@ -1,11 +1,8 @@
 // main.js
 
-// Function to handle the search form submission
 async function search() {
-  // Read the search term from the input field
   let searchTerm = document.forms.searchForm.term.value;
 
-  // Read the selected sorting option
   let titleSortOption = document.forms.searchForm.titleSort.value;
 
   // Make a fetch request to the server API endpoint for searching PowerPoint presentations
