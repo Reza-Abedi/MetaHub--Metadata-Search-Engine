@@ -128,18 +128,18 @@ This task was implemented by **Shiva Paknegar** - [GitHub Profile](https://githu
 
 - **Music Search API**:The application exposes an API endpoint for music search:
 
-- Endpoint: `/api/music/:searchTerm/:searchType/:durationSearch`
-  - `searchTerm`: The term to search for.
-  - `searchType`: Type of search (artist, album, title, or all).
-  - `durationSearch`: Duration filter (all, bigger, equal, smaller).
+   - Endpoint: `/api/music/:searchTerm/:searchType/:durationSearch`
+   - `searchTerm`: The term to search for.
+   - `searchType`: Type of search (artist, album, title, or all).
+   - `durationSearch`: Duration filter (all, bigger, equal, smaller).
 
 **Search Results**:
 The search results are displayed in a table with the following columns:
-  - Song
-  - Artist
-  - Album
-  - Duration
-  - Play 
+   - Song
+   - Artist
+   - Album
+   - Duration
+   - Play 
 #### License
 This project is licensed under the [MIT License](https://github.com/shivapaknegar).
 
@@ -251,7 +251,7 @@ This task was implemented by **MohammadReza Abedi** - [GitHub Profile](https://g
 
 - **PowerPoint Search API**
 The application exposes an API endpoint for PowerPoint search:
-- Endpoint: `/api/powerpoints/:searchTerm`
+  - Endpoint: `/api/powerpoints/:searchTerm`
   - `searchTerm`: The term to search for.
   - Query Parameter: `titleSort` (Sort by Title: "ascending" or "descending").
 
