@@ -271,7 +271,49 @@ The search results are displayed in a table with the following columns:
 ### License
 This project is licensed under the [MIT License](https://github.com/Reza-Abedi).
 
+---
 
+# MetaHub Search Application Server
+
+## Overview
+
+The MetaHub Search Application Server is an Express.js server designed to manage and serve various file types, including images, music, PDFs, and PowerPoint presentations. The server provides a unified API for searching and downloading files based on metadata criteria, ensuring a seamless experience for users.
+
+## Key Features
+
+1. **Unified API Structure:**
+   - Consistent and straightforward interactions with different file types.
+   - Designated routes for each file type for searching and downloading.
+
+2. **Static File Serving:**
+   - Express.js serves static files from the "sharedFiles" folder.
+   - Easy access to HTML, CSS, JavaScript, and other frontend files.
+
+3. **Database Connection:**
+   - Connection to a MySQL database hosted at '161.97.144.27:8093'.
+   - Enables execution of queries to retrieve metadata information.
+
+4. **Modular Database Query Function:**
+   - Versatile `query` function for executing SQL queries.
+   - Enhances code readability and reusability.
+
+5. **File Search and Download Routes:**
+   - *PowerPoint Presentations:* Search and sorting routes, download route.
+   - *PDFs:* Search based on metadata, download route.
+   - *Music:* Metadata search, duration filtering, download links.
+   - *Images:* Metadata search, download route.
+
+## Server Initialization and Hosting
+
+The server initializes by creating an Express app, establishing a MySQL connection, and serving static files. It listens on port 3000 and logs its status to the console.
+
+## Conclusion
+
+The MetaHub Search Application Server exhibits a well-structured design, leveraging Express.js and MySQL to create a reliable platform for searching and accessing multimedia content based on metadata criteria.
+
+
+### License
+This project is licensed GROUP3 - DataManager(Metadata)
 
 
 
