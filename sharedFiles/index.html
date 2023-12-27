@@ -5,27 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MetaHub Dashboard</title>
   <style>
+ 
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
       background-color: #f4f4f4;
     }
-
+ 
     header {
       background-color: #333;
       color: #fff;
       padding: 1em;
       text-align: center;
     }
-
+ 
     nav {
       display: flex;
       justify-content: space-around;
       background-color: #444;
       padding: 1em;
     }
-
+ 
     nav a {
       text-decoration: none;
       color: #fff;
@@ -33,32 +34,86 @@
       border-radius: 4px;
       transition: background-color 0.3s;
     }
-
+ 
     nav a:hover {
       background-color: #666;
     }
-
+ 
     main {
       padding: 1em;
+    }
+ 
+ 
+    #user-stories {
+      margin-top: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      padding: 20px;
+    }
+ 
+    #user-stories h2 {
+      color: #333;
+    }
+ 
+    #user-stories ol {
+      list-style-type: none;
+      padding: 0;
+    }
+ 
+    #user-stories li {
+      background-color: #f9f9f9;
+      margin-bottom: 10px;
+      padding: 15px;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s;
+    }
+ 
+    #user-stories li:hover {
+      background-color: #eaeaea;
     }
   </style>
 </head>
 <body>
-
+ 
 <header>
   <h1>MetaHub Dashboard</h1>
 </header>
-
+ 
 <nav>
   <a href="/pdf.html">PDF Metadata</a>
   <a href="/ppt.html">PPT Metadata</a>
   <a href="/music.html">Music Metadata</a>
   <a href="/images.html">Images Metadata</a>
 </nav>
-
+ 
 <main>
   <p>Welcome to the MetaHub Dashboard! Use the navigation menu above to explore different metadata types.</p>
+ 
+  <div id="user-stories">
+    <h2>User Stories</h2>
+ 
+    <ol>
+      <li>As a system owner, I want to have a MySQL database that can effectively store metadata about different types of files so that it's possible to search for a file through a search in the metadata.</li>
+ 
+      <li>As a system owner, I want there to be a system that can extract metadata about files from folders and save the metadata related to file names/path in the database.</li>
+ 
+      <li>As a visitor, I want there to be a web-based interface for searching in the metadata so that it's easy for me to search and see results.</li>
+ 
+      <li>As a visitor, I want to be able to choose what I want to search (a specific file type) so that the system understands the type of data I want to search for.</li>
+ 
+      <li>As a visitor, I want to be able to search both by file name and different metadata so that I can easily find what I am looking for.</li>
+ 
+      <li>As a visitor, I want to be able to search in the metadata in a good way (e.g., if something is equal to, not equal to, greater than, less than) a certain value so that it's easy for me to refine my search.</li>
+ 
+      <li>As a visitor, I want to be able to search geographically when the metadata contains geographic information (latitude and longitude).</li>
+ 
+      <li>As a visitor and system owner, I want the system to have a set of test data (non-copyright-protected) so that I can test that the system is functioning as it should.</li>
+    </ol>
+  </div>
+ 
 </main>
-
+ 
 </body>
 </html>
