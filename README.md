@@ -81,7 +81,7 @@ The database employs a common structure for each content type, with a unique ide
 
 # Extract and Insert Metadata into MetaHub Database 
 
-**Note:** The source files for GitHub ("Githop Extract files") are expected to be located in the `2-Metadata_Extraction` folder. 
+**Note:** The source files for extract files are expected to be located in the `2-Metadata_Extraction` folder. 
 
 This folder contains code snippets written in JavaScript to extract metadata from various types of digital content (images, music files, PDFs, and PowerPoints) and insert them into the MetaHub database.
 
