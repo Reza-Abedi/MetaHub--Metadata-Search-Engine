@@ -46,5 +46,4 @@ async function processImages() {
   }
 }
 
-// Call the function to start processing images
 processImages();

@@ -20,13 +20,10 @@ const connection = await mysql.createPool({
 
   try {
     for (let powerpointMetadata of data) {
-      // extract the file name (the property digest + '.ppt)
       let fileName = powerpointMetadata.digest + '.ppt';
 
-      // remove the file name
       delete powerpointMetadata.digest;
 
-      // remove sha hashes as well (only needed for file authenticity checks)
       delete powerpointMetadata.sha256;
       delete powerpointMetadata.sha512;
 
