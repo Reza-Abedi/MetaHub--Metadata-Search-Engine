@@ -88,11 +88,13 @@ app.get('/api/pdfs/:searchTerm', async (request, response) => {
 });
 
 // API route for downloading PDFs
-app.get('/api/pdfs/download/:pdfName', (request, response) => {
+app.get('/api/pdfs/download/:pdfId', (request, response) => {
   // Replace the following line with logic to serve the file for download
   const filePath = `path/to/your/pdf/files/${request.params.pdfId}`;
   response.download(filePath);
 });
+
+
 
 app.get('/api/powerpoints/:searchTerm', async (request, response) => {
   let searchTerm = request.params.searchTerm;
