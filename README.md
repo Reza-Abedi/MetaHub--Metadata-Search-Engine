@@ -104,6 +104,7 @@ A MySQL database connection is established using the `mysql2` library, with a co
 
 # Search Applications
 
+
 ## Music Metadata Search Application
 This eplanation contains code for a music metadata search application. Users can search for songs based on various criteria, and the application retrieves and displays relevant information from a MySQL database.
 
@@ -125,8 +126,8 @@ This task was implemented by **Shiva Paknegar** - [GitHub Profile](https://githu
 - 2. Install dependencies using `npm install`.
 - 3. Start the server with `npm start`.
 
-- **Music Search API**:
-The application exposes an API endpoint for music search:
+- **Music Search API**:The application exposes an API endpoint for music search:
+
 - Endpoint: `/api/music/:searchTerm/:searchType/:durationSearch`
   - `searchTerm`: The term to search for.
   - `searchType`: Type of search (artist, album, title, or all).
@@ -134,11 +135,11 @@ The application exposes an API endpoint for music search:
 
 **Search Results**:
 The search results are displayed in a table with the following columns:
-- Song
-- Artist
-- Album
-- Duration
-- Play 
+    - Song
+    - Artist
+    - Album
+    - Duration
+    - Play 
 #### License
 This project is licensed under the [MIT License](https://github.com/shivapaknegar).
 
