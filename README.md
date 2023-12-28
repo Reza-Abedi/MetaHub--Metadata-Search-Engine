@@ -57,9 +57,7 @@ Regular team meetings were scheduled to discuss progress, challenges, and coordi
 ### Code Collaboration: 
 We adopted a feature branch strategy using Git and Microsoft Teams. 
 
-
 ---
-
 
 ## Database Report: MetaHub
 
@@ -307,11 +305,4 @@ The search results are displayed in a table with the following columns:
 
 **Conclusion:** The MetaHub Search Application Server exhibits a well-structured design, leveraging Express.js and MySQL to create a reliable platform for searching and accessing multimedia content based on metadata criteria.
 
-
 **License:** This project is licensed GROUP3 - DataManager(Metadata)
-
-
-
-
-
-
