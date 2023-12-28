@@ -17,11 +17,10 @@ app.use(express.static('sharedFiles'));
 
 
 // Start the server on a certain port
-// and write to the terminal which port...
 app.listen(3000, () =>
   console.log('Listening on http://localhost:3000'));
 
-// Create a connection 'db' to the database
+//  Connection 'db' to the database METAHUB
 const db = await mysql.createConnection({
   host: '161.97.144.27',
   port: '8093',
@@ -49,7 +48,6 @@ app.get('/api/powerpoints/:searchTerm', async (request, response) => {
          OR LOWER(pptDescription -> '$.company') LIKE LOWER (?)
     `;
 
-    // Add sorting based on title
     if (titleSortOption === 'ascending') {
       sql += ` ORDER BY pptDescription -> '$.title' ASC `;
     } else if (titleSortOption === 'descending') {
@@ -58,7 +56,6 @@ app.get('/api/powerpoints/:searchTerm', async (request, response) => {
 
     let presentations = await query(sql, ['%' + searchTerm + '%', '%' + searchTerm + '%']);
 
-    // Modify the response structure based on your database schema
     let formattedPresentations = presentations.map(presentation => {
       return {
         pptName: presentation.pptName,
@@ -82,8 +79,7 @@ app.get('/api/powerpoints/:searchTerm', async (request, response) => {
 
 // API route for downloading PowerPoint presentations
 app.get('/api/powerpoints/download/:pptName', (request, response) => {
-  // Replace the following line with logic to serve the file for download
-  const filePath = `sharedFiles/${request.params.pptName}`; // Update the path
+  const filePath = `sharedFiles/${request.params.pptName}`; 
   response.download(filePath);
 });
 app.get('/api/pdfs/:searchTerm', async (request, response) => {
@@ -106,7 +102,7 @@ app.get('/api/pdfs/:searchTerm', async (request, response) => {
  
     const formattedResponse = pdfs.map(pdf => ({
       metadata: pdf.pdfDescription.info,
-      downloadLink: `/api/pdfs/download/${encodeURIComponent(pdf.pdfName)}` // Encode pdfName
+      downloadLink: `/api/pdfs/download/${encodeURIComponent(pdf.pdfName)}` 
     }));
  
     response.json(formattedResponse);
@@ -147,7 +143,6 @@ app.get('/api/music/:searchTerm/:durationSearch', async (request, response) => {
     let searchTerm = request.params.searchTerm;
     let durationSearch = request.params.durationSearch;
 
-    // Construct the SQL query based on the search term and duration search
     let sql;
 
     if (durationSearch === 'bigger') {
@@ -188,10 +183,8 @@ app.get('/api/music/:searchTerm/:durationSearch', async (request, response) => {
       `;
     }
 
-    // Make a database query and remember the result using the search term
     let result = await query(sql, Array(3).fill('%' + searchTerm + '%'));
 
-    // Send a response to the client
     response.json(result);
   } catch (error) {
     console.error('Error searching Music:', error);
@@ -231,7 +224,6 @@ app.get('/api/images/:searchTerm/:searchType', async (request, response) => {
 
 // A route for downloading Image files
 app.get('/api/images/download/:imageName', (request, response) => {
-  // Replace the following line with logic to serve the file for download
   const filePath = `sharedFiles/${request.params.imageName}`; // Update the path
   response.download(filePath);
 });

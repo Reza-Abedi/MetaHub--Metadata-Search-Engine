@@ -1,4 +1,4 @@
-// main.js
+// mainPDF.js
 
 // Function to handle the search form submission
 async function search() {

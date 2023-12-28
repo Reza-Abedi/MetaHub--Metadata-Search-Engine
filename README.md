@@ -1,5 +1,5 @@
 # Metadata Search Engine (Group3) 
-
+`We would like to note that all final project files are located in the`**'sharedFiles'** `directory, and the server should be run from the /root directory using the command node server.js.`
  
 ## Project Overview 
 Our team, consisting of three members, undertook the task of building a metadata search engine as part of the for the Metadata course. The primary objective of the project was to create a search engine capable of processing various file types (Images, Mp3, PPT and PDF), extracting metadata, and storing it in a MySQL database. 
@@ -273,7 +273,7 @@ The search results are displayed in a table with the following columns:
 
 ---
 
-# MetaHub Metadata-Search Engine 
+# MetaHub Metadata-Search Engine (sharedFiles and server.js)
 
 **Overview:** The MetaHub Search Application Server is an Express.js server designed to manage and serve various file types, including images, music, PDFs, and PowerPoint presentations. The server provides a unified API for searching and downloading files based on metadata criteria, ensuring a seamless experience for users.
 

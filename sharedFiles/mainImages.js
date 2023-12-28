@@ -1,4 +1,4 @@
-// main.js
+// mainImages.js
 
 // Function to perform a search based on user input
 async function searchMetadata() {
@@ -79,5 +79,4 @@ async function displayResults(data) {
   resultContainer.appendChild(table);
 }
 
-// Event listener for the search button
 document.getElementById('searchButton').addEventListener('click', searchMetadata);
