@@ -1,5 +1,5 @@
 # Metadata Search Engine (Group3) 
-`We would like to note that all final project files are located in the`**'sharedFiles'** `directory, and the server should be run from the`**' /root directory'** ` using the command `**'node server.js'**`
+`We would like to note that all final project files are located in the`**'sharedFiles'** `directory, and the server should be run from the`**' /root directory'** ` using the command `**'node server.js'**
  
 ## Project Overview 
 Our team, consisting of three members, undertook the task of building a metadata search engine as part of the for the Metadata course. The primary objective of the project was to create a search engine capable of processing various file types (Images, Mp3, PPT and PDF), extracting metadata, and storing it in a MySQL database. 
@@ -192,7 +192,7 @@ The search results are displayed in a table with the following columns:
 
 This explanation contains code for an image metadata search application. Users can search for images based on various criteria, and the application retrieves and displays relevant information from a MySQL database.
 
-**Team Member Responsible:** This task was implemented by **Shiva Paknegar** - [GitHub Profile](https://github.com/Yinghua009)
+**Team Member Responsible:** This task was implemented by **Yinghua Zhu** - [GitHub Profile](https://github.com/Yinghua009)
 
 **Project Structure:**
 - **Client**: Contains the HTML, CSS, and JavaScript files for the frontend.
@@ -303,6 +303,45 @@ The search results are displayed in a table with the following columns:
 
 **Server Initialization and Hosting:** The server initializes by creating an Express app, establishing a MySQL connection, and serving static files. It listens on port 3000 and logs its status to the console.
 
-**Conclusion:** The MetaHub Search Application Server exhibits a well-structured design, leveraging Express.js and MySQL to create a reliable platform for searching and accessing multimedia content based on metadata criteria.
+## Metadata Search Application Features
+
+#### Image Metadata Search
+**Filters:** Search based on attributes like Make, Model, or all.
+**Search Term:** The user can enter a search term to filter images.
+**Attributes:** The application filters images based on metadata attributes such as Make, Model, etc.
+
+
+#### PowerPoint Metadata Search:
+**Filters:** Sorting option for PowerPoint presentations based on title (ascending or descending).
+**Search Term:** The user can enter a search term to filter PowerPoint presentations.
+**Attributes:** The application filters PowerPoint presentations based on the title.
+
+#### PDF Metadata Search:
+**Filters:** Search based on various attributes like Title, Author, Creator, ModDate, Keywords, Producer, and CreationDate.
+**Search Term:** The user can enter a search term to filter PDFs.
+**Attributes:** The application filters PDFs based on multiple metadata attributes.
+
+#### Music Metadata Search:
+**Filters:** Search based on title, artist, album, and duration categories (bigger, equal, smaller).
+**Search Term:** The user can enter a search term to filter music.
+**Attributes:** The application filters music based on metadata attributes such as title, artist, album, and duration.
+General:
+
+#### Case Insensitivity:
+The search is case-insensitive to provide a more flexible search experience.
+
+#### Latitude and Longitude for Photos:
+ This addition enriches the photo application's metadata search capabilities by incorporating geographical data. Users can now search and filter photos based on location, providing a more comprehensive and geographically relevant search experience.
+
+#### Download PDF, Music, PowerPoint, and Play Music:
+The project includes functionality to download PDFs, music, and PowerPoint presentations directly from the application, enhancing user convenience.
+Objective: 
+**PDF Download:** Users can download PDFs directly from the application, allowing them to save and access files locally.
+**Music Download:** Users can download music files directly from the application, providing an option for offline access.
+**PowerPoint Download:** PowerPoint presentations are available for download, enabling users to retrieve and use files locally.
+**Music Playback:** Additionally, the project supports playing music directly within the application, offering a seamless and integrated experience for users exploring music metadata.
+
+## Conclusion:
+The MetaHub Search Application Server exhibits a well-structured design, leveraging Express.js and MySQL to create a reliable platform for searching and accessing multimedia content based on metadata criteria.
 
 **License:** This project is licensed GROUP3 - DataManager(Metadata)
