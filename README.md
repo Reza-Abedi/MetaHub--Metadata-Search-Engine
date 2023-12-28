@@ -303,7 +303,7 @@ The search results are displayed in a table with the following columns:
 
 **Server Initialization and Hosting:** The server initializes by creating an Express app, establishing a MySQL connection, and serving static files. It listens on port 3000 and logs its status to the console.
 
-## Metadata Search Application Features
+## Application Features
 
 #### Image Metadata Search
 **Filters:** Search based on attributes like Make, Model, or all.
@@ -335,10 +335,13 @@ The search is case-insensitive to provide a more flexible search experience.
 
 #### Download PDF, Music, PowerPoint, and Play Music:
 The project includes functionality to download PDFs, music, and PowerPoint presentations directly from the application, enhancing user convenience.
-Objective: 
+
 **PDF Download:** Users can download PDFs directly from the application, allowing them to save and access files locally.
+
 **Music Download:** Users can download music files directly from the application, providing an option for offline access.
+
 **PowerPoint Download:** PowerPoint presentations are available for download, enabling users to retrieve and use files locally.
+
 **Music Playback:** Additionally, the project supports playing music directly within the application, offering a seamless and integrated experience for users exploring music metadata.
 
 ## Conclusion:
