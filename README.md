@@ -1,5 +1,5 @@
 # Metadata Search Engine (Group3) 
-`We would like to note that all final project files are located in the`**'sharedFiles'** `directory, and the server should be run from the /root directory using the command node server.js.`
+`We would like to note that all final project files are located in the`**'sharedFiles'** `directory, and the server should be run from the`**' /root directory'** ` using the command `**'node server.js'**`
  
 ## Project Overview 
 Our team, consisting of three members, undertook the task of building a metadata search engine as part of the for the Metadata course. The primary objective of the project was to create a search engine capable of processing various file types (Images, Mp3, PPT and PDF), extracting metadata, and storing it in a MySQL database. 
