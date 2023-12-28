@@ -36,7 +36,7 @@ Shiva Paknegar took on multiple responsibilities and made significant contributi
 
 ### Yinghua Zhu
 Yinghua Zhu's contributions were focused on specific areas, showcasing her expertise:
-- **Photo Application Creation:-** Yinghua took the lead in creating the photo application, demonstrating her proficiency in frontend development.
+- **Images Application Creation:-** Yinghua took the lead in creating the photo application, demonstrating her proficiency in frontend development.
 - **Collaborative File Structuring:** Collaborated effectively with the team to structure project files. This ensured a coherent and organized presentation of files on the shared server.
 
 ### MohammadReza Abedi
