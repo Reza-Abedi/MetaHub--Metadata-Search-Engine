@@ -5,23 +5,16 @@
 Our team, consisting of three members, undertook the task of building a metadata search engine as part of the for the Metadata course. The primary objective of the project was to create a search engine capable of processing various file types (Images, Mp3, PPT and PDF), extracting metadata, and storing it in a MySQL database. 
  
 ### User stories 
-New user stories may be added or old ones removed by the product owner, but these are the ones we currently have: 
-- As a system owner, I want a MySQL database that can effectively store metadata about various types of files so that I can search for a file through a metadata search. 
-- As a system owner, I want a system that can extract metadata from folders of files and save the metadata related to file names/paths in the database. 
-- As a system owner, I want a MySQL database that can effectively store metadata about web pages/URLs so that I can search for a webpage through a metadata search. (Hold off on this user story until a review of scraping/harvesting data from web pages is done in week 49.) 
-- As a visitor, I want a web-based interface for searching metadata so that it is easy for me to search and view results. 
-- As a visitor, I want to be able to choose what I want to search (a specific file type or web pages) so that the system understands the type of data I want to search for. 
-- As a visitor, I want to be able to search both by file name and metadata so that I can easily find what I'm looking for. 
-- As a visitor, I want to be able to search effectively in the metadata (e.g., if something is equal to, not equal to, greater than, less than) a certain value, so that it is easy for me to refine my search. 
-- As a visitor, I want to be able to search geographically when the metadata contains geographic information (latitude and longitude). 
-- As a visitor and system owner, I want the system to have a set of test data (non-copyright protected) so that I can test that the system functions as intended. 
+- As a system owner, I want to have a MySQL database that can effectively store metadata about different types of files so that it's possible to search for a file through a search in the metadata.
+- As a system owner, I want there to be a system that can extract metadata about files from folders and save the metadata related to file names/path in the database.
+- As a visitor, I want there to be a web-based interface for searching in the metadata so that it's easy for me to search and see results.
+- As a visitor, I want to be able to choose what I want to search (a specific file type) so that the system understands the type of data I want to search for.
+- As a visitor, I want to be able to search both by file name and different metadata so that I can easily find what I am looking for.
+- As a visitor, I want to be able to search in the metadata in a good way (e.g., if something is equal to, not equal to, greater than, less than) a certain value so that it's easy for me to refine my search.
+- As a visitor, I want to be able to search geographically when the metadata contains geographic information (latitude and longitude).
+- As a visitor and system owner, I want the system to have a set of test data (non-copyright-protected) so that I can test that the system is functioning as it should.
  
-### Technologies Used 
-- Node.js: Employed for metadata extraction from files and web pages using relevant libraries and plugins. 
-- MySQL: Chosen as the cloud-based server for storing extracted metadata. 
-- Git (GitHub): Utilized for version control to facilitate collaborative development. 
- 
- --- 
+---
 
 ## Team Contributions
 
@@ -50,21 +43,23 @@ As the project manager, MohammadReza Abedi played a central role in steering the
 - **HTML Table Styling:** He contributed to the project's frontend by implementing a visually appealing HTML table based on the HDM style.
 - **Report Preparation:** Reza took charge of preparing comprehensive reports, documenting project progress, milestones, and relevant insights. 
 
-
-### Team Collaboration
-Communication: We established clear communication channels using Teams, ensuring effective information exchange and prompt issue resolution. 
+### Technologies Used 
+- Node.js: Employed for metadata extraction from files and web pages using relevant libraries and plugins. 
+- MySQL: Chosen as the cloud-based server for storing extracted metadata. 
+- Git (GitHub): Utilized for version control to facilitate collaborative development. 
+ 
+### Meetings-Microsoft Teams: 
+Regular team meetings were scheduled to discuss progress, challenges, and coordinate tasks. These meetings fostered a collaborative environment and allowed for quick problem resolution. 
 
 ### Project Management: 
 - Jira (Kanban) was employed for task organization, progress tracking, and task assignment. We employed Jira(Kanban) to streamline these processes and ensure a well-organized development workflow.  
 
 ### Code Collaboration: 
-We adopted a feature branch strategy using Git. Each team member worked on a specific feature in a separate branch before merging into the main branch. Code reviews were regularly conducted to ensure code quality by Mohammadreza (Reza)
-
-### Meetings-Microsoft Teams: 
-Regular team meetings were scheduled to discuss progress, challenges, and coordinate tasks. These meetings fostered a collaborative environment and allowed for quick problem resolution. 
+We adopted a feature branch strategy using Git and Microsoft Teams. 
 
 
 ---
+
 
 ## Database Report: MetaHub
 
