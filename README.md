@@ -35,6 +35,31 @@ Regular team meetings were scheduled to discuss progress, challenges, and coordi
 
 
 
+### Shiva Paknegar
+Shiva Paknegar took on multiple responsibilities and made significant contributions to the project:
+- **CPDF Metadata Extraction:**  Shiva played a crucial role in extracting metadata from PDF files. This involved handling various aspects of PDF information.
+Music Application Preparation: Shiva meticulously prepared the music application, contributing to its functionality and ensuring it met the project requirements.
+Debugging Expertise: Shiva actively participated in debugging sessions, demonstrating her problem-solving skills and attention to detail.
+Latitude and Longitude for Photos: Shiva was responsible for creating functionalities related to latitude and longitude for the photo application, enriching its metadata search capabilities.
+HTML Intro Pages: Shiva contributed to the project's frontend by creating HTML intro pages, enhancing the user experience.
+Navigator Implementation: Shiva implemented navigators, improving the overall navigation within the project.
+### Yinghua Zhu
+Yinghua Zhu's contributions were focused on specific areas, showcasing her expertise:
+
+Photo Application Creation: Yinghua took the lead in creating the photo application, demonstrating her proficiency in frontend development.
+Collaborative File Structuring: She collaborated effectively with the team to structure project files. This ensured a coherent and organized presentation of files on the shared server.
+### MohammadReza Abedi
+As the project manager, MohammadReza Abedi played a central role in steering the project and contributed significantly to various aspects:
+
+Project Management: MohammadReza served as the project manager, providing overall direction, guidance, and coordination.
+Framework Building: He was responsible for building the project framework, ensuring a solid foundation for development.
+Metadata Extraction: MohammadReza handled the extraction of metadata, specifically from both photos and PowerPoint presentations.
+PowerPoint Application: He took on the specific responsibility of creating the PowerPoint application, contributing to its design and functionality.
+Debugging Involvement: MohammadReza actively participated in debugging sessions, addressing issues and ensuring the project's stability.
+Enhanced Photo Application Search: In the photo application, MohammadReza added the ability to search with latitude and longitude coordinates, expanding its search capabilities.
+HTML Table Styling: He contributed to the project's frontend by implementing a visually appealing HTML table based on the HDM style.
+
+
 MohammadReza Abedi: As the project manager, He took the lead in mapping out the project. This involved overseeing the overall project structure, coordinating task assignments, and ensuring alignment with project timelines. Throughout the process, Reza took on the responsibility of ensuring that the collected sources aligned seamlessly with the designated implementation patterns. This quality check was crucial for maintaining consistency in our work. 
 
 
