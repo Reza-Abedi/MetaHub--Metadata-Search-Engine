@@ -98,22 +98,20 @@ The database employs a common structure for each content type, with a unique ide
 # Extract and Insert Metadata into MetaHub Database 
 
 **Note:** The source files for extract files are expected to be located in the `2-Metadata_Extraction` folder. 
-
 This folder contains code snippets written in JavaScript to extract metadata from various types of digital content (images, music files, PDFs, and PowerPoints) and insert them into the MetaHub database.
 
-### Image Metadata Extraction
-The code utilizes the `exifr` library to parse EXIF data from JPEG images. Extracted metadata is then inserted into the MetaHub database's Images table, storing information such as image name and description in JSON format.
+**Image Metadata Extraction:** The code utilizes the `exifr` library to parse EXIF data from JPEG images. Extracted metadata is then inserted into the MetaHub database's Images table, storing information such as image name and description in JSON format.
 
-### Music Metadata Extraction
+**Music Metadata Extraction:**
 For music files, the `music-metadata` library is employed to extract metadata. Unnecessary metadata fields are removed before inserting relevant information, including music name and description, into the MetaHub Musics table.
 
-### PDF Metadata Extraction
+**PDF Metadata Extraction:**
 The code uses the `pdf-parse-fork` library to extract metadata, including the number of pages and additional information, from PDF files. The extracted data, along with the full text, is inserted into the MetaHub PDFs table.
 
-### PowerPoint Metadata Insertion
+**PowerPoint Metadata Insertion:**
 PowerPoint metadata stored in a JSON file is read and processed. Unnecessary fields are removed, and the remaining metadata is inserted into the MetaHub PowerPoints table.
 
-### Database Connection
+**Database Connection:**
 A MySQL database connection is established using the `mysql2` library, with a connection pool for efficient handling of database connections. The connection details, including host, port, user, password, and database name, are specified in the code.
 
 ---
@@ -124,10 +122,9 @@ A MySQL database connection is established using the `mysql2` library, with a co
 ## Music Metadata Search Application
 This eplanation contains code for a music metadata search application. Users can search for songs based on various criteria, and the application retrieves and displays relevant information from a MySQL database.
 
-### Team Member Responsible
-This task was implemented by **Shiva Paknegar** - [GitHub Profile](https://github.com/shivapaknegar)
+**Team Member Responsible:** This task was implemented by **Shiva Paknegar** - [GitHub Profile](https://github.com/shivapaknegar)
 
-### Project Structure
+**Project Structur:**
 
 - **Client**: Contains the HTML, CSS, and JavaScript files for the frontend.
   - `index.html`: Defines the structure of the web page.
@@ -156,8 +153,7 @@ The search results are displayed in a table with the following columns:
    - Album
    - Duration
    - Play 
-#### License
-This project is licensed under the [MIT License](https://github.com/shivapaknegar).
+**License** This project is licensed under the [MIT License](https://github.com/shivapaknegar).
 
 
 
@@ -166,29 +162,28 @@ This project is licensed under the [MIT License](https://github.com/shivapaknega
 
 This explanation contains code for a PDF metadata search application. Users can search for PDFs based on various criteria, and the application retrieves and displays relevant information from a MySQL database.
 
-### Team Member Responsible
-This task was implemented by **Shiva Paknegar** - [GitHub Profile](https://github.com/shivapaknegar)
+**Team Member Responsible:** This task was implemented by **Shiva Paknegar** - [GitHub Profile](https://github.com/shivapaknegar)
 
-### Project Structure
+**Project Structure**
 - **Client**: Contains the HTML, CSS, and JavaScript files for the frontend.
   - `index.html`: Defines the structure of the web page.
   - `style.css`: Provides styles for the HTML elements.
   - `main.js`: Handles client-side functionality, including PDF search and result display.
 
-- **Server**:
+- **Server:**
   - `main.js`: An Express.js server file that serves static files from the 'Client' folder and handles API requests for PDF search.
   
-- **How to Run**:
+- **How to Run:**
    - 1. Clone this repository.
    - 2.  Install dependencies using `npm install`.
    - 3. Start the server with `npm start`.
 
-- **PDF Search API**:
+- **PDF Search API:**
 The application exposes an API endpoint for PDF search:
    - Endpoint: `/api/pdfs/:searchTerm`
    - `searchTerm`: The term to search for.
 
-- **Search Results**:
+- **Search Results:**
 The search results are displayed in a table with the following columns:
   - Title
   - Author
@@ -196,8 +191,7 @@ The search results are displayed in a table with the following columns:
   - ModDate
   - CreationDate
   - Download
-#### License
-This project is licensed under the [MIT License](https://github.com/shivapaknegar).
+**License:**This project is licensed under the [MIT License](https://github.com/shivapaknegar).
 
 
 
@@ -205,30 +199,29 @@ This project is licensed under the [MIT License](https://github.com/shivapaknega
 
 This explanation contains code for an image metadata search application. Users can search for images based on various criteria, and the application retrieves and displays relevant information from a MySQL database.
 
-### Team Member Responsible
-This task was implemented by **Shiva Paknegar** - [GitHub Profile](https://github.com/Yinghua009)
+**Team Member Responsible:** This task was implemented by **Shiva Paknegar** - [GitHub Profile](https://github.com/Yinghua009)
 
-### Project Structure
+**Project Structure:**
 - **Client**: Contains the HTML, CSS, and JavaScript files for the frontend.
   - `index.html`: Defines the structure of the web page.
   - `style.css`: Provides styles for the HTML elements.
   - `main.js`: Handles client-side functionality, including image search and result display.
 
-- **Server**:
+- **Server:**
   - `server.js`: An Express.js server file that serves static files from the 'client' folder and handles API requests for image search.
 
-- **How to Run**:
+- **How to Run:**
   - 1. Clone this repository.
   - 2. Install dependencies using `npm install`.
   - 3. Start the server with `npm start`.
 
-- **Image Search API**:
+- **Image Search API:**
 The application exposes an API endpoint for image search:
   - Endpoint: `/api/search/:searchTerm/:searchType`
   - `searchTerm`: The term to search for.
   - `searchType`: Type of search (Make, Model, or all).
 
-- **Image Search Results**:
+- **Image Search Results:**
 The image search results are displayed in a table with the following columns:
   - Name
   - Make
@@ -240,42 +233,41 @@ The image search results are displayed in a table with the following columns:
   - Width
   - Height
   - Image Preview
-#### License
-This project is licensed under the [MIT License](https://github.com/Yinghua009).
+**License:** This project is licensed under the [MIT License](https://github.com/Yinghua009).
+
 
 
 ## PowerPoint Metadata Search Application
 
 This explanation contains code for a PowerPoint metadata search application. Users can search for presentations based on various criteria, and the application retrieves and displays relevant information from a MySQL database.
 
-### Team Member Responsible
-This task was implemented by **MohammadReza Abedi** - [GitHub Profile](https://github.com/Reza-Abedi)
+**Team Member Responsible**: This task was implemented by **MohammadReza Abedi** - [GitHub Profile](https://github.com/Reza-Abedi)
 
-### Project Structure
+**Project Structure**
 - **Client**: Contains the HTML, CSS, and JavaScript files for the frontend.
   - `index.html`: Defines the structure of the web page.
   - `style.css`: Provides styles for the HTML elements.
   - `main.js`: Handles client-side functionality, including PowerPoint search and result display.
 
-- **Server**:
+- **Server:**
   - `server.js`: An Express.js server file that serves static files from the 'Client' folder and handles API requests for PowerPoint search.
 
-- **How to Run**
+- **How to Run:**
   - 1. Clone this repository.
   - 2. Install dependencies using `npm install`.
   - 3. Start the server with `npm start`.
 
-- **PowerPoint Search API**
+- **PowerPoint Search API:**
 The application exposes an API endpoint for PowerPoint search:
   - Endpoint: `/api/powerpoints/:searchTerm`
   - `searchTerm`: The term to search for.
   - Query Parameter: `titleSort` (Sort by Title: "ascending" or "descending").
 
-- **Search Form**
+- **Search Form:**
   - `Search Term`: Input for the term to search for.
   - `Sort by Title`: Dropdown to select the sorting order for presentation titles.
 
-- **Search Results**:
+- **Search Results:**
 The search results are displayed in a table with the following columns:
   - Title
   - Company
@@ -284,16 +276,13 @@ The search results are displayed in a table with the following columns:
   - Creation Date
   - Last Modified
   - Download
-### License
-This project is licensed under the [MIT License](https://github.com/Reza-Abedi).
+**License:**This project is licensed under the [MIT License](https://github.com/Reza-Abedi).
 
 ---
 
-# MetaHub Search Application Server
+# MetaHub Metadata-Search Engine 
 
-## Overview
-
-The MetaHub Search Application Server is an Express.js server designed to manage and serve various file types, including images, music, PDFs, and PowerPoint presentations. The server provides a unified API for searching and downloading files based on metadata criteria, ensuring a seamless experience for users.
+**Overview:** The MetaHub Search Application Server is an Express.js server designed to manage and serve various file types, including images, music, PDFs, and PowerPoint presentations. The server provides a unified API for searching and downloading files based on metadata criteria, ensuring a seamless experience for users.
 
 ## Key Features
 
@@ -319,17 +308,12 @@ The MetaHub Search Application Server is an Express.js server designed to manage
    - *Music:* Metadata search, duration filtering, download links.
    - *Images:* Metadata search, download route.
 
-## Server Initialization and Hosting
+**Server Initialization and Hosting:** The server initializes by creating an Express app, establishing a MySQL connection, and serving static files. It listens on port 3000 and logs its status to the console.
 
-The server initializes by creating an Express app, establishing a MySQL connection, and serving static files. It listens on port 3000 and logs its status to the console.
-
-## Conclusion
-
-The MetaHub Search Application Server exhibits a well-structured design, leveraging Express.js and MySQL to create a reliable platform for searching and accessing multimedia content based on metadata criteria.
+**Conclusion:** The MetaHub Search Application Server exhibits a well-structured design, leveraging Express.js and MySQL to create a reliable platform for searching and accessing multimedia content based on metadata criteria.
 
 
-### License
-This project is licensed GROUP3 - DataManager(Metadata)
+**License:** This project is licensed GROUP3 - DataManager(Metadata)
 
 
 
