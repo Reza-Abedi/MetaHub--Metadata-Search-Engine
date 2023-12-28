@@ -5,45 +5,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MetaHub Dashboard</title>
   <style>
- 
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
       background-color: #f4f4f4;
+      color: #333;
     }
- 
+
     header {
-      background-color: #333;
+      background-color: #2c3e50;
       color: #fff;
       padding: 1em;
       text-align: center;
     }
- 
+
     nav {
       display: flex;
       justify-content: space-around;
-      background-color: #444;
+      background-color: #34495e;
       padding: 1em;
     }
- 
+
     nav a {
       text-decoration: none;
-      color: #fff;
+      color: #ecf0f1;
       padding: 0.5em 1em;
       border-radius: 4px;
       transition: background-color 0.3s;
     }
- 
+
     nav a:hover {
-      background-color: #666;
+      background-color: #2c3e50;
     }
- 
+
     main {
       padding: 1em;
     }
- 
- 
+
     #user-stories {
       margin-top: 20px;
       background-color: #fff;
@@ -51,27 +50,47 @@
       border-radius: 8px;
       padding: 20px;
     }
- 
+
     #user-stories h2 {
       color: #333;
     }
- 
+
     #user-stories ol {
       list-style-type: none;
       padding: 0;
     }
- 
+
     #user-stories li {
-      background-color: #f9f9f9;
+      background-color: #ecf0f1;
       margin-bottom: 10px;
       padding: 15px;
       border-radius: 6px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       transition: background-color 0.3s;
     }
- 
+
     #user-stories li:hover {
-      background-color: #eaeaea;
+      background-color: #d5d8dc;
+    }
+
+    #application-features {
+      margin-top: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      padding: 20px;
+    }
+
+    #application-features h2 {
+      color: #333;
+    }
+
+    #application-features h3 {
+      color: #2c3e50;
+    }
+
+    #application-features strong {
+      color: #3498db;
     }
   </style>
 </head>
@@ -112,7 +131,44 @@
       <li>As a visitor and system owner, I want the system to have a set of test data (non-copyright-protected) so that I can test that the system is functioning as it should.</li>
     </ol>
   </div>
- 
+
+  <div id="application-features">
+    <h2>Application Features</h2>
+
+    <h3>Image Metadata Search</h3>
+    <strong>Filters:</strong> Search based on attributes like Make, Model, or all.<br>
+    <strong>Search Term:</strong> The user can enter a search term to filter images.<br>
+    <strong>Attributes:</strong> The application filters images based on metadata attributes such as Make, Model, etc.
+
+    <h3>PowerPoint Metadata Search</h3>
+    <strong>Filters:</strong> Sorting option for PowerPoint presentations based on title (ascending or descending).<br>
+    <strong>Search Term:</strong> The user can enter a search term to filter PowerPoint presentations.<br>
+    <strong>Attributes:</strong> The application filters PowerPoint presentations based on the title.
+
+    <h3>PDF Metadata Search</h3>
+    <strong>Filters:</strong> Search based on various attributes like Title, Author, Creator, ModDate, Keywords, Producer, and CreationDate.<br>
+    <strong>Search Term:</strong> The user can enter a search term to filter PDFs.<br>
+    <strong>Attributes:</strong> The application filters PDFs based on multiple metadata attributes.
+
+    <h3>Music Metadata Search</h3>
+    <strong>Filters:</strong> Search based on title, artist, album, and duration categories (bigger, equal, smaller).<br>
+    <strong>Search Term:</strong> The user can enter a search term to filter music.<br>
+    <strong>Attributes:</strong> The application filters music based on metadata attributes such as title, artist, album, and duration.
+
+    <h3>General</h3>
+    <strong>Case Insensitivity:</strong> The search is case-insensitive to provide a more flexible search experience.
+
+    <h3>Latitude and Longitude for Photos</h3>
+    This addition enriches the photo application's metadata search capabilities by incorporating geographical data. Users can now search and filter photos based on location, providing a more comprehensive and geographically relevant search experience.
+
+    <h3>Download PDF, Music, PowerPoint, and Play Music</h3>
+    The project includes functionality to download PDFs, music, and PowerPoint presentations directly from the application, enhancing user convenience.<br>
+    <strong>Objective:</strong><br>
+    <strong>PDF Download:</strong> Users can download PDFs directly from the application, allowing them to save and access files locally.<br>
+    <strong>Music Download:</strong> Users can download music files directly from the application, providing an option for offline access.<br>
+    <strong>PowerPoint Download:</strong> PowerPoint presentations are available for download, enabling users to retrieve and use files locally.<br>
+    <strong>Music Playback:</strong> Additionally, the project supports playing music directly within the application, offering a seamless and integrated experience for users exploring music metadata.
+  </div>
 </main>
  
 </body>
