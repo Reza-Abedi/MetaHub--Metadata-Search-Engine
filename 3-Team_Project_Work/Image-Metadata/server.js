@@ -14,11 +14,11 @@ const __dirname = path.dirname(__filename);
 app.use(express.static(path.join(__dirname, 'client')));
 
 const db = await mysql.createConnection({
-  host: '161.97.144.27',
-  port: '8093',
-  user: 'root',
-  password: 'guessagain93',
-  database: 'MetaHub'
+    host: '',
+    port: '',
+    user: '',
+    password: '',
+    database: ''
 });
 
 async function query(sql, listOfValues) {
