@@ -22,11 +22,11 @@ app.listen(3000, () =>
 
 //  Connection 'db' to the database METAHUB
 const db = await mysql.createConnection({
-  host: '161.97.144.27',
-  port: '8093',
-  user: 'root',
-  password: 'guessagain93',
-  database: 'MetaHub'
+  host: '',
+  port: '',
+  user: '',
+  password: '',
+  database: ''
 });
 
 // A small function for a database query
