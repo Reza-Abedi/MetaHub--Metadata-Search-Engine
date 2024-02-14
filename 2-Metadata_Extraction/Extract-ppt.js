@@ -8,14 +8,11 @@ async function insertDataIntoDatabase(data) {
 // queueLimit: 0: This determines the maximum number of queries that can be queued while waiting for a connection to become available. Setting it to 0 means that there is no limit to the number of queued queries.
   
 const connection = await mysql.createPool({
-    host: '161.97.144.27',
-    port: '8093',
-    user: 'root',
-    password: 'guessagain93',
-    database: 'MetaHub',
-    waitForConnections: true,
-    connectionLimit: 10,
-    queueLimit: 0,
+  host: '',
+    port: '',
+    user: '',
+    password: '',
+    database: ''
   });
 
   try {
