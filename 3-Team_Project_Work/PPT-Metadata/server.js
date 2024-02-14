@@ -20,11 +20,11 @@ app.listen(3000, () => {
 async function initializeDatabase() {
   // Create a connection 'db' to the database
   db = await mysql.createConnection({
-    host: '161.97.144.27',
-    port: '8093',
-    user: 'root',
-    password: 'guessagain93',
-    database: 'MetaHub'
+    host: '',
+    port: '',
+    user: '',
+    password: '',
+    database: ''
   });
 
   // Your database initialization logic goes here
