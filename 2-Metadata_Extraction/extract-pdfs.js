@@ -3,11 +3,11 @@ import pdfParse from 'pdf-parse-fork';
 import mysql from 'mysql2/promise';
 
 const db = await mysql.createConnection({
-    host: '161.97.144.27',
-  port: '8093',
-  user: 'root',
-  password: 'guessagain93',
-  database: 'MetaHub'
+  host: '',
+    port: '',
+    user: '',
+    password: '',
+    database: ''
 });
 
 
